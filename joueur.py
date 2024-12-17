@@ -4,7 +4,7 @@ import random
 class Joueur:
     def __init__(self, nom: str):
         self.nom = nom
-        self.position = [0, 0, 0]  # [anneau, position, rayon],  anneau 0=rayons - 1=cercle extérieur, rayon 0=centre - rayon 1à6=rayons
+        self.position = [0, 0, 0]  # [anneau, position, rayon],  anneau 0=rayons - 1=cercle extérieur, rayon 0=centre - rayon 0à5=rayons
         self.camembert_entier = False
         self.camemberts = {
             "T1": False,
