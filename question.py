@@ -1,24 +1,37 @@
 import json
+import random
+
 
 class Question :
     def __init__(self):
         pass 
 
-    def level():
-        with open ("liste_questions.json", "r") as fichier :
-            data = json.load(fichier)
+    def random_question():
+        with open ("liste_questions.json", "r") as file :
+            data = json.load(file)
 
+        a = data["hard_level"]["theme1"].keys()
+        b = list(a)
+        c = random.choice(b)
+        print(c)
+#importer question les retourner dans dans variable en fonction du niveau
         
-#si appel methode de dé = case niveau 1 and couleur = ... --> 
 
+    random_question()
 
 '''
+theme, niveau
+relié au resultat case
 
-3 niveaux de difficulté :
-- facile : 5 * nb de joueur
-- moyen : 6 * nb de joueur
-- difficile : nb de joueur 
+methode pose question : theme selon case , parametre : theme de case 
 
-THEME
 
+toutes les questions ont le meme niveau sauf la derniere
+
+importer resultat dé (class joueur) que je stocke dans "result"
+si result == jaune : question random theme1
+si result == bleu : question random theme2
+
+
+self.camembert_entier == True
 '''

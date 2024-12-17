@@ -1,119 +1,22 @@
-{
-    "theme1": {
-        "easy_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "medium_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "hard_level": {
-            "question1": "reponse"
-        }
+["easy_level": {
+
+        "theme1": {
+            "question1_th1": "reponse",
+            "question2_th1": "reponse"},
+        "theme2": {
+            "question1_th2": "reponse",
+            "question2_th2": "reponse"}
     },
 
-    "theme2": {
-        "easy_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "medium_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "hard_level": {
-            "question1": "reponse"
-        }
-    },
-    "theme3": {
-        "easy_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "medium_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "hard_level": {
-            "question1": "reponse"
-        }
-    },
-    "theme4": {
-        "easy_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "medium_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "hard_level": {
-            "question1": "reponse"
-        }
-    },
-    "theme5": {
-        "easy_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "medium_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "hard_level": {
-            "question1": "reponse"
-        }
-    },
-    "theme6": {
-        "easy_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "medium_level": {
-            "question1": "reponse",
-            "question2": "reponse",
-            "question3": "reponse",
-            "question4": "reponse",
-            "question5": "reponse"
-        },
-        "hard_level": {
-            "question1": "reponse"
-        }
+"hard_level": {
+
+        "theme1": {
+            "question11_th1": "reponse",
+            "question22_th1": "reponse"},
+        "theme2": {
+            "question11_th2": "reponse",
+            "question22_th2": "reponse"}
     }
-}
+]
 
     
