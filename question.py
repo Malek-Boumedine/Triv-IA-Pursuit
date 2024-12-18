@@ -3,24 +3,62 @@ import random
 
 
 class Question :
-    def __init__(self):
-        pass 
+    def __init__(self, theme, niveau):
+        self.theme = theme
+        self.niveau = niveau
 
-    def random_question():
+    def recuperer_questions():
         with open ("liste_questions.json", "r") as file :
             data = json.load(file)
 
-        a = data["hard_level"]["theme1"].keys()
-        b = list(a)
-        c = random.choice(b)
-        print(c)
-#importer question les retourner dans dans variable en fonction du niveau
+        for level_data in data:
+            if level_data["level"] == "easy_level":
+                # print("Les questions easy_level th1 :")
+                for theme, questions in level_data.items():
+                    if theme == "theme1":  
+                        question_simple_th1 = [] 
+                        for question in questions.keys():
+                            a = (f"  {question} ")
+                            question_simple_th1.append(a)
+
         
 
-    random_question()
+
+
+        for level_data in data:
+            if level_data["level"] == "easy_level":
+                # print("Les questions easy_level th2 :")
+                for theme, questions in level_data.items():
+                    if theme == "theme2":  
+                        question_simple_th2 = [] 
+                        for question in questions.keys():
+                            b = (f"  {question} ")
+                            question_simple_th2.append(b)
+                        
+
+        
+        
+        # print("Les questions easy_level th1 :" f"{question_simple_th1}")
+        # print("Les questions easy_level th2 :" f"{question_simple_th2}")
+        
+
+
+
+                            
+
+
+
+
+
+                # b = random.choice(liste_question_simple)
+                # print(b)
+
+
+        
+
+    # recuperer_questions()
 
 '''
-theme, niveau
 relié au resultat case
 
 methode pose question : theme selon case , parametre : theme de case 
@@ -35,3 +73,24 @@ si result == bleu : question random theme2
 
 self.camembert_entier == True
 '''
+
+
+# with open ("liste_questions2.json", "r") as file2 :
+#     data2 = json.load(file2)
+
+# question_facile = data2[0]
+# print(question_facile)
+
+
+with open ("liste_questions.json", "r") as file :
+    data = json.load(file)
+
+question_facile = data[0]["theme1"]
+question_difficile = data[1]
+
+question_fac = data[0]["theme2"]
+# print(question_fac)
+
+
+if input("text") == "bleu":
+    random.choice(question_facile)
