@@ -1,5 +1,7 @@
 from tkinter import Canvas, mainloop, Tk
 import time
+import tkinter
+import random
 
 def circle(canvas, x, y, r, width):
     return canvas.create_oval(x+r, y+r, x-r, y-r, width=width)
@@ -125,21 +127,74 @@ def dessin():
 
     w.pack()
     time.sleep(2)
+
+
+
+def bouton():
     
+
+    global jouer
+    global a
+
+
+    a = random.randint(1,6)
+
+    lancer = tkinter.Button(window,text= "Lancer le dé", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, command = activer_ok)
+    resultat = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "Le résultat du dé est : " + str(a))
+    jouer = tkinter.Button(window,text= "Jouer", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, state = "disable")
+    question = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "La question est : ")
+    reponse = tkinter.Entry(window, font=("Arial", 12), fg="blue")
+    valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5)
+
+    lancer.pack()
+    resultat.pack()
+    jouer.pack()
+    question.pack()
+    reponse.pack()
+    valider.pack()
+
+    return lancer, jouer
+
+def activer_ok():
+    jouer.config(state = "normal")
+    
+
+def mouvement():
+    """
+    a chaque click Jouer  : déplacement aleatoire en fonction "a" dans table_mappage
+    
+    
+    """
+    while jouer :
+        deplacement = 100 + int(a)
+        return deplacement
+    
+
+        
+
 
 dessin()
 
 deplacement = range(100, 128)
-print(table_mappage)
+# print(table_mappage)
+bouton()
+# activer_ok()
+
 for param in deplacement:
 
-    abso, ordo = table_mappage[str(param)]
 
+
+    # abso, ordo = table_mappage[str(param)]
+    abso, ordo = table_mappage[str(mouvement())]
+
+
+    print(f"ok {abso}")
     circlee = circle(w, abso, ordo, 5, 10)
     w.pack()
     w.update()
-    time.sleep(2)
+    time.sleep(1)
     w.delete(circlee)
     w.update()
+
 
 mainloop()
