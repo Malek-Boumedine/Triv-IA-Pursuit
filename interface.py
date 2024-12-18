@@ -16,7 +16,6 @@ window = Tk()
 w = Canvas(window, width=1000, height=800, bg='white')
 table_mappage ={}
 
-
 deplacement = 100
 print(deplacement)
 
@@ -132,17 +131,11 @@ def dessin():
     w.pack()
     time.sleep(2)
 
-
-
 def bouton():
     
-
     global jouer
     global a
  
-
-    
-
     a = random.randint(1,6)
 
     lancer = tkinter.Button(window,text= "Lancer le dé", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, command = activer_ok)
@@ -169,10 +162,11 @@ def mouvement():
     print(c)
     global deplacement
     deplacement += c
+    if deplacement >= 128 :
+        deplacement = 100
     return deplacement
 
 def clicbutton():
-    #print("Position de la souris:", event.x, event.y)
     w.delete("de")
     w.update()
     abso, ordo = table_mappage[str(mouvement())]
@@ -181,7 +175,10 @@ def clicbutton():
     w.pack()
     w.update()
 
+
+
 dessin()
 bouton()
 #w.bind("<Double-Button-1>", on_timer)
 mainloop()
+

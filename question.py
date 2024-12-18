@@ -7,33 +7,33 @@ class Question :
         self.theme = theme
         self.niveau = niveau
 
-    def recuperer_questions():
-        with open ("liste_questions.json", "r") as file :
-            data = json.load(file)
+    # def recuperer_questions():
+    #     with open ("liste_questions.json", "r") as file :
+    #         data = json.load(file)
 
-        for level_data in data:
-            if level_data["level"] == "easy_level":
-                # print("Les questions easy_level th1 :")
-                for theme, questions in level_data.items():
-                    if theme == "theme1":  
-                        question_simple_th1 = [] 
-                        for question in questions.keys():
-                            a = (f"  {question} ")
-                            question_simple_th1.append(a)
+    #     for level_data in data:
+    #         if level_data["level"] == "easy_level":
+    #             # print("Les questions easy_level th1 :")
+    #             for theme, questions in level_data.items():
+    #                 if theme == "theme1":  
+    #                     question_simple_th1 = [] 
+    #                     for question in questions.keys():
+    #                         a = (f"  {question} ")
+    #                         question_simple_th1.append(a)
 
         
 
 
 
-        for level_data in data:
-            if level_data["level"] == "easy_level":
-                # print("Les questions easy_level th2 :")
-                for theme, questions in level_data.items():
-                    if theme == "theme2":  
-                        question_simple_th2 = [] 
-                        for question in questions.keys():
-                            b = (f"  {question} ")
-                            question_simple_th2.append(b)
+    #     for level_data in data:
+    #         if level_data["level"] == "easy_level":
+    #             # print("Les questions easy_level th2 :")
+    #             for theme, questions in level_data.items():
+    #                 if theme == "theme2":  
+    #                     question_simple_th2 = [] 
+    #                     for question in questions.keys():
+    #                         b = (f"  {question} ")
+    #                         question_simple_th2.append(b)
                         
 
         
@@ -85,12 +85,13 @@ self.camembert_entier == True
 with open ("liste_questions.json", "r") as file :
     data = json.load(file)
 
-question_facile = data[0]["theme1"]
-question_difficile = data[1]
 
-question_fac = data[0]["theme2"]
-# print(question_fac)
+# theme1 = data[0]["theme1"]
+# first_question = list(theme1.keys())[1]
+
+first_question = list(data[0]["theme1"].keys())[0]
+print(first_question)
 
 
-if input("text") == "bleu":
-    random.choice(question_facile)
+
+

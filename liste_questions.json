@@ -3,21 +3,21 @@
         "theme1": {
 
             "Qui a été le président en France de 1995 à 2007 ? (Saisissez uniquement le nom de famille)": "Chirac",
-            "Quelle est la capitale de la Turquie ?": "Istanbul",
-            "A quelle année a eu lieu ": "reponse",
-            "question4_th1": "reponse"
+            "Quelle est la capitale de la Turquie ?": "Ankara",
+            "En quelle année a eu lieu la prise de la Bastille ?": "1789",
+            "De quelle couleur est le cheval blanc d'Henri IV ?": "blanc"
         },
         "theme2": {
-            "question1_th1": "reponse",
-            "question2_th1": "reponse",
-            "question3_th1": "reponse",
-            "question4_th1": "reponse"
+            "Qui a marqué deux buts lors de la finale de la Coupe du Monde 1998 ? (Saisissez uniquement le nom de famille)": "Zidane",
+            "Dans quelle ville se déroule le tournoi de Roland-Garos ": "Paris",
+            "Quel sport est pratiqué par Serena Williams ? ": "tennis",
+            "Comment s'appelle l’athlète jamaïcain célèbre pour ses records en sprint ?": "Usain Bolt"
         },
         "theme3": {
-            "question1_th1": "reponse",
-            "question2_th1": "reponse",
-            "question3_th1": "reponse",
-            "question4_th1": "reponse"
+            "Dans quel film peut-on entendre la réplique 'Que la Force soit avec toi' ?": "Star Wars",
+            "Quel jeu vidéo met en scène un plombier moustachu en salopette rouge ?": "Mario",
+            "Quelle chanteuse est surnommée 'La Reine de la Pop' ": "Madonna",
+            "Quel film d’animation Pixar met en scène une famille de super-héros ?": "Les Indestructibles"
         },
         "theme4": {
             "question1_th1": "reponse",
@@ -26,6 +26,12 @@
             "question4_th1": "reponse"
         },
         "theme5": {
+            "question1_th1": "reponse",
+            "question2_th1": "reponse",
+            "question3_th1": "reponse",
+            "question4_th1": "reponse"
+        },
+        "theme6": {
             "question1_th1": "reponse",
             "question2_th1": "reponse",
             "question3_th1": "reponse",
@@ -40,5 +46,5 @@
         "question5_th1": "reponse"
         }
     
-=======
+    ]
             
