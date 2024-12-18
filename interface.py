@@ -3,8 +3,8 @@ import time
 import tkinter
 import random
 
-def circle(canvas, x, y, r, width):
-    return canvas.create_oval(x+r, y+r, x-r, y-r, width=width)
+def circle(canvas, x, y, r, width, name=""):
+    return canvas.create_oval(x+r, y+r, x-r, y-r, width=width, tags=name)
 
 def fun_tracage1(pente, coeff, x)->int:
     return pente * x + coeff
@@ -15,6 +15,10 @@ def text(canvas, x, y, text):
 window = Tk()
 w = Canvas(window, width=1000, height=800, bg='white')
 table_mappage ={}
+
+
+deplacement = 100
+print(deplacement)
 
 def dessin():
     circle(w, 50, 300, 20, 3)
@@ -135,13 +139,15 @@ def bouton():
 
     global jouer
     global a
+ 
 
+    
 
     a = random.randint(1,6)
 
     lancer = tkinter.Button(window,text= "Lancer le dé", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, command = activer_ok)
     resultat = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "Le résultat du dé est : " + str(a))
-    jouer = tkinter.Button(window,text= "Jouer", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, state = "disable")
+    jouer = tkinter.Button(window,text= "Jouer", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, state = "disable", command = clicbutton )
     question = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "La question est : ")
     reponse = tkinter.Entry(window, font=("Arial", 12), fg="blue")
     valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5)
@@ -156,45 +162,26 @@ def bouton():
     return lancer, jouer
 
 def activer_ok():
-    jouer.config(state = "normal")
-    
+    jouer.config(state = "normal")   
 
 def mouvement():
-    """
-    a chaque click Jouer  : déplacement aleatoire en fonction "a" dans table_mappage
-    
-    
-    """
-    while jouer :
-        deplacement = 100 + int(a)
-        return deplacement
-    
+    c = random.randint(1,6)
+    print(c)
+    global deplacement
+    deplacement += c
+    return deplacement
 
-        
-
-
-dessin()
-
-deplacement = range(100, 128)
-# print(table_mappage)
-bouton()
-# activer_ok()
-
-for param in deplacement:
-
-
-
-    # abso, ordo = table_mappage[str(param)]
+def clicbutton():
+    #print("Position de la souris:", event.x, event.y)
+    w.delete("de")
+    w.update()
     abso, ordo = table_mappage[str(mouvement())]
-
-
     print(f"ok {abso}")
-    circlee = circle(w, abso, ordo, 5, 10)
+    circlee = circle(w, abso, ordo, 5, 10, "de")
     w.pack()
     w.update()
-    time.sleep(1)
-    w.delete(circlee)
-    w.update()
 
-
+dessin()
+bouton()
+#w.bind("<Double-Button-1>", on_timer)
 mainloop()
