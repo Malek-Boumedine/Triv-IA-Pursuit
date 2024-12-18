@@ -1,22 +1,71 @@
-["easy_level": {
-
+[
+    {
         "theme1": {
-            "question1_th1": "reponse",
-            "question2_th1": "reponse"},
+            "question1": {
+                "enonce" : "quelle est la premiere question ?",
+                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
+                "reponse_correcte" : "reponse2"
+            },
+            "question2": {
+                "enonce" : "quelle est la premiere question ?",
+                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
+                "reponse_correcte" : "reponse3"
+            }
+        },
         "theme2": {
-            "question1_th2": "reponse",
-            "question2_th2": "reponse"}
+            "question1": {
+                "enonce" : "quelle est la premiere question ?",
+                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
+                "reponse_correcte" : "reponse2"
+            },
+            "question2": {
+                "enonce" : "quelle est la premiere question ?",
+                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
+                "reponse_correcte" : "reponse3"
+            }
+        },
+        "theme3": {
+            "question1": {
+                "enonce" : "quelle est la premiere question ?",
+                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
+                "reponse_correcte" : "reponse2"
+            },
+            "question2": {
+                "enonce" : "quelle est la premiere question ?",
+                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
+                "reponse_correcte" : "reponse3"
+            }
+        },
+        "theme4": {
+            "question1": {
+                "enonce" : "quelle est la premiere question ?",
+                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
+                "reponse_correcte" : "reponse2"
+            },
+            "question2": {
+                "enonce" : "quelle est la premiere question ?",
+                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
+                "reponse_correcte" : "reponse3"
+            }
+        }
     },
 
-"hard_level": {
-
-        "theme1": {
-            "question11_th1": "reponse",
-            "question22_th1": "reponse"},
-        "theme2": {
-            "question11_th2": "reponse",
-            "question22_th2": "reponse"}
+    {
+        "question1": {
+            "enonce" : "quelle est la premiere question ?",
+            "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
+            "reponse_correcte" : "reponse2"
+        },
+        "question2": {
+            "enonce" : "quelle est la premiere question ?",
+            "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
+            "reponse_correcte" : "reponse3"
+        }
     }
 ]
+                
+                
+                
+
 
     
