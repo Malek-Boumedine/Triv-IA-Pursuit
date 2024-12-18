@@ -165,36 +165,47 @@ def mouvement():
     
     
     """
-    while jouer :
-        deplacement = 100 + int(a)
-        return deplacement
+    deplacement = 100
+    a = random.randint(1,6)
+    if deplacement + a <= 127:
+        deplacement += a  # Avance de a
+    else:
+        deplacement = 127 
+
+
+
     
 
         
-
-
+mouvement()
 dessin()
 
-deplacement = range(100, 128)
-# print(table_mappage)
 bouton()
 # activer_ok()
-
-for param in deplacement:
-
+deplacement = range(110, 128)
 
 
-    # abso, ordo = table_mappage[str(param)]
-    abso, ordo = table_mappage[str(mouvement())]
+# for param in deplacement:
 
 
-    print(f"ok {abso}")
-    circlee = circle(w, abso, ordo, 5, 10)
-    w.pack()
-    w.update()
-    time.sleep(1)
-    w.delete(circlee)
-    w.update()
+#     abso, ordo = table_mappage[str(param)]
+
+#     print(f"ok {abso}")
+#     circlee = circle(w, abso, ordo, 5, 10)
+#     w.pack()
+#     w.update()
+#     time.sleep(1)
+#     w.delete(circlee)
+#     w.update()
+
+
+
+
+
+
+
+
+
 
 
 mainloop()
