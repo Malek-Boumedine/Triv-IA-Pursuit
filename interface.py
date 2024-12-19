@@ -28,6 +28,7 @@ w = Canvas(window, width=1000, height=800, bg='white')
 # Il s'agit des positions des centres des différents cercles 
 table_mappage ={}
 
+# la case d'origine commence par le numero 100 dans la table de mappage
 deplacement = 100
 print(deplacement)
 
@@ -153,17 +154,29 @@ def dessin():
     w.pack()
     time.sleep(2)
 
+# chargement des questions depuis le fichier json
+def chargement_question():
+    with open ("liste_questions.json", "r") as file:
+        data = json.load(file)
+    question1 = list(data[0]["theme1"].keys())[0]
+    return question1
+
+# ajouter les différents boutons et labels dans l'interface principale
 def bouton():
     
-    global jouer
+    global jouer, lancer, valider, resultat
     global a
- 
-    a = random.randint(1,6)
-
-    lancer = tkinter.Button(window,text= "Lancer le dé", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, command = activer_ok)
-    resultat = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "Le résultat du dé est : " + str(a))
-    jouer = tkinter.Button(window,text= "Jouer", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, state = "disable", command = clicbutton )
-    question = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "La question est : ")
+    
+    #a = random.randint(1,6)
+    question = chargement_question()
+   
+    #label résultat du dé
+    resultat = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "Le résultat du dé est : ")
+    #bouton jouer
+    jouer = tkinter.Button(window,text= "Jouer", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, state = "normal", command = clicbutton )
+    #label de la question
+    question = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "La question est : "+question )
+    #input de la réponse
     reponse = tkinter.Entry(window, font=("Arial", 12), fg="blue")
     #bouton valider
     valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised",state = "disable", bd=5)
@@ -194,18 +207,29 @@ def active_de():
     
     return  pas
 
+def reponse():
+    etat = jouer.cget("state")
+    if etat == "normal":
+        valider.config(state = "normal")
+    else :
+        valider.config(state = "disable")
+
 # mouvement représente le déplacement dans le jeu
 def mouvement():
     c = random.randint(1,6)
     print(c)
     global deplacement
     deplacement += c
-    if deplacement >= 128 :
+    if deplacement >= 128:
         deplacement = 100
-    return deplacement
+    return deplacement, c
 
 # afficher le cercle qui représente le déplacement
 def clicbutton():
+    etat = jouer.cget("state")
+    if etat == "normal":
+        valider.config(state = "normal")
+        jouer.config(state="disabled")
     w.delete("de")
     w.update()
     deplacer, pas = mouvement()
@@ -216,10 +240,7 @@ def clicbutton():
     w.pack()
     w.update()
 
-
-
+#appel des différentes méthodes
 dessin()
 bouton()
-#w.bind("<Double-Button-1>", on_timer)
 mainloop()
-
