@@ -17,14 +17,14 @@ class GestionQuestions :
         
     @staticmethod
     def importer_questions() : 
-        with open("liste_questions.json", "r") as fichier : 
+        with open("liste_questions copy.json", "r") as fichier : 
             questions = json.load(fichier)
         questions_normales = questions[0]
         questions_finales = questions[1]
         return questions_normales, questions_finales
 
     def poser_question(self, case: Case) :
-        theme = case.theme
+        theme = case.obtenir_theme()
         questions_theme = self.questions_normales[theme]
         cle_question = random.choice(list(questions_theme.keys()))
         enonce = questions_theme[cle_question]["enonce"]
