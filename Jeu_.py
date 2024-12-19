@@ -1,15 +1,17 @@
 import random
 
 class Jeu:
-    
+
+    # initialisation de la classe Jeu
     def __init__(self, type):
         
         self.nom = "TrivIA"
-        self.type = type
+        self.type = type # type de jeu Solo ou Multi
         self.en_cours = False
         
         print(f"Bienvenue dans le jeu : {self.nom}!")
 
+    # démarrage de la partie
     def demarrer(self):
         if  not self.en_cours:
             self.en_cours = True
@@ -18,12 +20,15 @@ class Jeu:
         else:
             print("Le jeu est déjà en cours!")
 
+    # contrôler la prtie
+    # TODO changer la méthode
     def jouer(self):
         if self.type == "solo":
             print("Le jeu est en SOLO!")
         else:
             print("Le jeu est en Multijoueur!")
 
+    # arrêt du jeu
     def terminer(self):
         if self.en_cours:
             self.en_cours = False
@@ -31,6 +36,7 @@ class Jeu:
         else:
             print("Le jeu n'est pas en cours.")
 
+    # affichage des informations du jeu
     def __str__(self):
         return f"Jeu: {self.nom}"
 
