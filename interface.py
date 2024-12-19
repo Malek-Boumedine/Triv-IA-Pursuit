@@ -1,5 +1,5 @@
 import json
-from tkinter import Canvas, mainloop, Tk, messagebox
+from tkinter import END, Canvas, mainloop, Tk, messagebox
 import time
 import tkinter
 import random
@@ -7,8 +7,8 @@ from joueur import *
 
 # dessiner un cercle dans un canvas
 # le tag permet d'identifier le cercle dans le canvas 
-def circle(canvas, x, y, r, width, name=""):
-    return canvas.create_oval(x+r, y+r, x-r, y-r, width=width, tags=name)
+def circle(canvas, x, y, r, width, name="", couleur=""):
+    return canvas.create_oval(x+r, y+r, x-r, y-r, width=width, tags=name, fill=couleur)
 
 # fun_tracage1 assure le calcul de l'ordonnée y du point central du cercle
 # x : paramètre d'entrée qui représente l'abscisse du centre
@@ -43,12 +43,12 @@ print(deplacement)
 # Garder les prints pour la vérification
 
 def dessin():
-    circle(w, 50, 300, 20, 3)
+    circle(w, 50, 300, 20, 3, "", "red")
     #text(w, 50, 300, 'P0')
     table_mappage['114']=(50, 300)
 
     for i in range(100, 350, 50):
-        circle(w, i, 300, 10, 3)
+        circle(w, i, 300, 10, 3, "", "green")
         #text(w, i, 300, 'P')
         #print(i)
     table_mappage['052']=(100, 300)
@@ -57,13 +57,13 @@ def dessin():
     table_mappage['022']=(250, 300)
     table_mappage['012']=(300, 300)
 
-    circle(w, 350, 300, 20, 3)
+    circle(w, 350, 300, 20, 3, "", "red")
     #table_mappage['000']=(350, 300)
     #abs, ord = table_mappage['000']
     #text(w, ord, abs, 'P')
 
     for i in range(400, 650, 50):
-        circle(w, i, 300, 10, 3)
+        circle(w, i, 300, 10, 3, "", "green")
         #print(i)
 
     table_mappage['010']=(400, 300)
@@ -72,11 +72,11 @@ def dessin():
     table_mappage['040']=(550, 300)
     table_mappage['050']=(600, 300)
 
-    circle(w, 650, 300, 20, 3)
+    circle(w, 650, 300, 20, 3, "", "red")
     table_mappage['100']=(650, 300)
 
     for i in range(350, 600, 50):
-        circle(w, 350, i, 10, 3)
+        circle(w, 350, i, 10, 3, "", "green")
         #print(i)
 
     table_mappage['011']=(350, 350)
@@ -85,11 +85,11 @@ def dessin():
     table_mappage['041']=(350, 500)
     table_mappage['051']=(350, 550)
 
-    circle(w, 350, 600, 20, 3)
+    circle(w, 350, 600, 20, 3, "", "red")
     table_mappage['107']=(350, 600) 
 
     for i in range(50, 300, 50):
-        circle(w, 350, i, 10, 3)
+        circle(w, 350, i, 10, 3, "", "green")
         #print(i)
     table_mappage['053']=(350, 50)
     table_mappage['043']=(350, 100)
@@ -97,11 +97,11 @@ def dessin():
     table_mappage['023']=(350, 200)
     table_mappage['013']=(350, 250)
 
-    circle(w, 350, 0, 20, 3)
+    circle(w, 350, 0, 20, 3, "", "red")
     table_mappage['121']=(350, 0)
 
     for i in range(400, 601, 40):
-        circle(w, i, fun_tracage1(1, -350, i), 10, 3)
+        circle(w, i, fun_tracage1(1, -350, i), 10, 3, "", "blue")
         #print(i," ", fun_tracage1(1, -350, i))
 
     table_mappage['122']=(400, 50)   
@@ -114,7 +114,7 @@ def dessin():
     print("###")
 
     for i in range(390, 601, 40):
-        circle(w, i, fun_tracage1(-1, 950, i), 10, 3)
+        circle(w, i, fun_tracage1(-1, 950, i), 10, 3, "", "blue")
         #print(i," ", fun_tracage1(-1, 950, i))
 
     table_mappage['106']=(390, 560)   
@@ -127,7 +127,7 @@ def dessin():
     print("###")
 
     for i in range(100, 301, 40):
-        circle(w, i, fun_tracage1(1, 250, i), 10, 3)
+        circle(w, i, fun_tracage1(1, 250, i), 10, 3, "", "blue")
         #print(i," ", fun_tracage1(1, 250, i))
 
     table_mappage['113']=(100, 350)   
@@ -139,7 +139,7 @@ def dessin():
     print("###")
 
     for i in range(100, 301, 40):
-        circle(w, i, fun_tracage1(-1, 350, i), 10, 3)
+        circle(w, i, fun_tracage1(-1, 350, i), 10, 3, "", "blue")
         #print(i," ", fun_tracage1(-1, 350, i))
 
     table_mappage['120']=(290, 60)  
@@ -234,6 +234,10 @@ def mouvement():
 def creation_joueur():
     global joueur
     joueur = Joueur("wael", 0)
+    abso, ordo = table_mappage[str(100)]
+    circlee = circle(w, abso, ordo, 5, 10, "de")
+    w.pack()
+    w.update()
 
 # afficher le cercle qui représente le déplacement
 def clicbutton():
@@ -265,6 +269,7 @@ def validerbutton():
     if reponsejoueur.lower() == str(reponsejson).lower():
         valider.config(state = "disabled")
         jouer.config(state="normal")
+        reponse.delete(0, END)
     else:
         reponseb = messagebox.askyesno("Partie terminée", "Voulez-vous continuer depuis la case de départ?")
         if reponseb:  # Si "Oui" est sélectionné
