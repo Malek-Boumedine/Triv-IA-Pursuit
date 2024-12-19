@@ -4,21 +4,42 @@ import time
 import tkinter
 import random
 
+# dessiner un cercle dans un canvas
+# le tag permet d'identifier le cercle dans le canvas 
 def circle(canvas, x, y, r, width, name=""):
     return canvas.create_oval(x+r, y+r, x-r, y-r, width=width, tags=name)
 
+# fun_tracage1 assure le calcul de l'ordonnée y du point central du cercle
+# x : paramètre d'entrée qui représente l'abscisse du centre
+# le calcul de la pente et du coefficient 
 def fun_tracage1(pente, coeff, x)->int:
     return pente * x + coeff
 
+# dessiner un texte dans un canvas
 def text(canvas, x, y, text):
     return canvas.create_text(x, y, text=text, font=('bold', 8))
 
+#préparation du canvas
 window = Tk()
 w = Canvas(window, width=1000, height=800, bg='white')
+
+# le table de mappage permet de relier les informations fournies par le backend
+# Il transforme le déplacement par des positions dans le canvas
+# Il s'agit des positions des centres des différents cercles 
 table_mappage ={}
 
+# la case d'origine commence par le numero 100 dans la table de mappage
 deplacement = 100
 print(deplacement)
+
+# dessine le jeu 
+# les cases sous forme de cercle
+# On dessine la structure et on charge la table de mappage
+# TODO utiliser les cases internes
+# Pour le moment on utlise que les cases externes
+# ces cases sont présentées dans la table de mappage de l'indice 100 à 127
+# le sens du montre dans le déplacement
+# Garder les prints pour la vérification
 
 def dessin():
     circle(w, 50, 300, 20, 3)
@@ -129,15 +150,18 @@ def dessin():
 
     print("##########")
 
+    # utilisation du pack pour l'organisation des cercles
     w.pack()
     time.sleep(2)
 
+# chargement des questions depuis le fichier json
 def chargement_question():
     with open ("liste_questions.json", "r") as file:
         data = json.load(file)
     question1 = list(data[0]["theme1"].keys())[0]
     return question1
 
+# ajouter les différents boutons et labels dans l'interface principale
 def bouton():
     
     global jouer, lancer, valider, resultat
@@ -145,14 +169,19 @@ def bouton():
     
     #a = random.randint(1,6)
     question = chargement_question()
-   # lancer = tkinter.Button(window,text= "Lancer le dé", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, command = active_de)
+   
+    #label résultat du dé
     resultat = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "Le résultat du dé est : ")
+    #bouton jouer
     jouer = tkinter.Button(window,text= "Jouer", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, state = "normal", command = clicbutton )
+    #label de la question
     question = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "La question est : "+question )
+    #input de la réponse
     reponse = tkinter.Entry(window, font=("Arial", 12), fg="blue")
+    #bouton valider
     valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised",state = "disable", bd=5)
 
-    #lancer.pack()
+    # utilisation du pack pour l'organisation des boutons et labels
     resultat.pack()
     jouer.pack()
     question.pack()
@@ -161,23 +190,24 @@ def bouton():
 
     return jouer, valider, resultat
 
+#activer le bouton jouer
 def activer_ok():
-    jouer.config(state = "normal")   
+    jouer.config(state = "normal")
+
+#activation des boutons
 def active_de():
     print("de active") 
     pas = random.randint(1,6)
     resultat.config(text="Le résultat du dé est : " + str(pas))
     etat = lancer.cget("state")
     if etat == "normal":
-        #lancer.config(state = "disabled")
         jouer.config(state = "normal") 
     else:
-        #lancer.config(state = "normal")
         jouer.config(state = "disabled") 
     
     return  pas
 
-
+# mouvement représente le déplacement dans le jeu
 def mouvement():
     c = random.randint(1,6)
     print(c)
@@ -187,8 +217,8 @@ def mouvement():
         deplacement = 100
     return deplacement, c
 
+# afficher le cercle qui représente le déplacement
 def clicbutton():
-    #print("Position de la souris:", event.x, event.y)
     etat = jouer.cget("state")
     if etat == "normal":
         valider.config(state = "normal")
@@ -203,7 +233,7 @@ def clicbutton():
     w.pack()
     w.update()
 
+#appel des différentes méthodes
 dessin()
 bouton()
-#w.bind("<Double-Button-1>", on_timer)
 mainloop()
