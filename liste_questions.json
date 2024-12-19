@@ -3,9 +3,13 @@
         "theme1": {
 
             "Qui a été le président en France de 1995 à 2007 ? (Saisissez uniquement le nom de famille)": "Chirac",
-            "Quelle est la capitale de la Turquie ?": "Istanbul",
-            "A quelle année a eu lieu ": "reponse",
-            "question4_th1": "reponse"
+            "Quelle est la capitale de la Turquie ?": "Ankara",
+            "Le nom de votre centre formation actuelle? ": "Simplon",
+            "L'année de votre formation Simplon": "2024",
+            "pytest est un framework de ?":"test",
+            "TensorFlow est un framework de ?":"IA",
+            "Hadoop est un framework de ? ": "Data"
+
         },
         "theme2": {
             "question1_th1": "reponse",
@@ -18,5 +22,6 @@
             "question2_th1": "reponse",
             "question3_th1": "reponse",
             "question4_th1": "reponse"
-        },
-        "theme4": {
+        }
+    }
+]

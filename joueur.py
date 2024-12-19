@@ -17,8 +17,8 @@ class Joueur:
         }
 
     def lancer_de(self) -> int :
-        # return random.randint(1, 6)
-        return 1
+        return random.randint(1, 6)
+        #return 1
 
     def se_deplacer(self) -> str :
         input("Appuyez sur Entree pour lancer le dé ! 🎲 ")
