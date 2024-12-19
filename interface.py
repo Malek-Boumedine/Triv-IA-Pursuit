@@ -1,23 +1,44 @@
+import json
 from tkinter import Canvas, mainloop, Tk
 import time
 import tkinter
 import random
 
+# dessiner un cercle dans un canvas
+# le tag permet d'identifier le cercle dans le canvas 
 def circle(canvas, x, y, r, width, name=""):
     return canvas.create_oval(x+r, y+r, x-r, y-r, width=width, tags=name)
 
+# fun_tracage1 assure le calcul de l'ordonnée y du point central du cercle
+# x : paramètre d'entrée qui représente l'abscisse du centre
+# le calcul de la pente et du coefficient 
 def fun_tracage1(pente, coeff, x)->int:
     return pente * x + coeff
 
+# dessiner un texte dans un canvas
 def text(canvas, x, y, text):
     return canvas.create_text(x, y, text=text, font=('bold', 8))
 
+#préparation du canvas
 window = Tk()
 w = Canvas(window, width=1000, height=800, bg='white')
+
+# le table de mappage permet de relier les informations fournies par le backend
+# Il transforme le déplacement par des positions dans le canvas
+# Il s'agit des positions des centres des différents cercles 
 table_mappage ={}
 
 deplacement = 100
 print(deplacement)
+
+# dessine le jeu 
+# les cases sous forme de cercle
+# On dessine la structure et on charge la table de mappage
+# TODO utiliser les cases internes
+# Pour le moment on utlise que les cases externes
+# ces cases sont présentées dans la table de mappage de l'indice 100 à 127
+# le sens du montre dans le déplacement
+# Garder les prints pour la vérification
 
 def dessin():
     circle(w, 50, 300, 20, 3)
@@ -79,7 +100,7 @@ def dessin():
 
     for i in range(400, 601, 40):
         circle(w, i, fun_tracage1(1, -350, i), 10, 3)
-        print(i," ", fun_tracage1(1, -350, i))
+        #print(i," ", fun_tracage1(1, -350, i))
 
     table_mappage['122']=(400, 50)   
     table_mappage['123']=(440, 90)  
@@ -92,7 +113,7 @@ def dessin():
 
     for i in range(390, 601, 40):
         circle(w, i, fun_tracage1(-1, 950, i), 10, 3)
-        print(i," ", fun_tracage1(-1, 950, i))
+        #print(i," ", fun_tracage1(-1, 950, i))
 
     table_mappage['106']=(390, 560)   
     table_mappage['105']=(430, 520)   
@@ -105,7 +126,7 @@ def dessin():
 
     for i in range(100, 301, 40):
         circle(w, i, fun_tracage1(1, 250, i), 10, 3)
-        print(i," ", fun_tracage1(1, 250, i))
+        #print(i," ", fun_tracage1(1, 250, i))
 
     table_mappage['113']=(100, 350)   
     table_mappage['112']=(140, 390)   
@@ -117,7 +138,7 @@ def dessin():
 
     for i in range(100, 301, 40):
         circle(w, i, fun_tracage1(-1, 350, i), 10, 3)
-        print(i," ", fun_tracage1(-1, 350, i))
+        #print(i," ", fun_tracage1(-1, 350, i))
 
     table_mappage['120']=(290, 60)  
     table_mappage['119']=(250, 100)   
@@ -128,6 +149,7 @@ def dessin():
 
     print("##########")
 
+    # utilisation du pack pour l'organisation des cercles
     w.pack()
     time.sleep(2)
 
@@ -143,20 +165,36 @@ def bouton():
     jouer = tkinter.Button(window,text= "Jouer", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, state = "disable", command = clicbutton )
     question = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "La question est : ")
     reponse = tkinter.Entry(window, font=("Arial", 12), fg="blue")
-    valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5)
+    #bouton valider
+    valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised",state = "disable", bd=5)
 
-    lancer.pack()
+    # utilisation du pack pour l'organisation des boutons et labels
     resultat.pack()
     jouer.pack()
     question.pack()
     reponse.pack()
     valider.pack()
 
-    return lancer, jouer
+    return jouer, valider, resultat
 
+#activer le bouton jouer
 def activer_ok():
-    jouer.config(state = "normal")   
+    jouer.config(state = "normal")
 
+#activation des boutons
+def active_de():
+    print("de active") 
+    pas = random.randint(1,6)
+    resultat.config(text="Le résultat du dé est : " + str(pas))
+    etat = lancer.cget("state")
+    if etat == "normal":
+        jouer.config(state = "normal") 
+    else:
+        jouer.config(state = "disabled") 
+    
+    return  pas
+
+# mouvement représente le déplacement dans le jeu
 def mouvement():
     c = random.randint(1,6)
     print(c)
@@ -166,10 +204,13 @@ def mouvement():
         deplacement = 100
     return deplacement
 
+# afficher le cercle qui représente le déplacement
 def clicbutton():
     w.delete("de")
     w.update()
-    abso, ordo = table_mappage[str(mouvement())]
+    deplacer, pas = mouvement()
+    abso, ordo = table_mappage[str(deplacer)]
+    resultat.config(text="Le résultat du dé est : " + str(pas))
     print(f"ok {abso}")
     circlee = circle(w, abso, ordo, 5, 10, "de")
     w.pack()

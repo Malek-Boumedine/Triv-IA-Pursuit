@@ -8,20 +8,23 @@ class Joueur:
         self.position = position  # [de 0 à 28]
         self.camembert_entier = False
         self.camemberts = {
-            "T1": False,
-            "T2": False,
-            "T3": False,
-            "T4": False
+            "theme1": False,
+            "theme2": False,
+            "theme3": False,
+            "theme4": False,
+            "theme5": False,
+            "theme6": False
         }
 
     def lancer_de(self) -> int :
-        return random.randint(1, 6)
+        # return random.randint(1, 6)
+        return 1
 
     def se_deplacer(self) -> str :
-        input("Appuyez sur Entree pour lancer le dé ! ")
+        input("Appuyez sur Entree pour lancer le dé ! 🎲 ")
         resultat_de = self.lancer_de()
-        self.position += resultat_de
-        return (f"{self.nom} a obtenu un {resultat_de} au lancé de dé ! ")
+        self.position = (self.position + resultat_de) % 28
+        return(f"\t🎲 {self.nom} a obtenu un {resultat_de} ! 🎲")
 
     def tenter_gagner_camembert(self, case : Case, theme : str) :  
         if case.est_case_camembert(): 
@@ -31,10 +34,6 @@ class Joueur:
         self.camemberts[theme] = True
         if all(self.camemberts.values()) :
             self.camembert_entier = True 
-            
-    def rejouer(self, case : Case) : 
-        if case.est_case_relance : 
-            self.se_deplacer
-            
+                        
             
 
