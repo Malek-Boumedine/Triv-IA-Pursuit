@@ -1,8 +1,9 @@
 import json
-from tkinter import Canvas, mainloop, Tk
+from tkinter import Canvas, mainloop, Tk, messagebox
 import time
 import tkinter
 import random
+from joueur import *
 
 # dessiner un cercle dans un canvas
 # le tag permet d'identifier le cercle dans le canvas 
@@ -21,7 +22,7 @@ def text(canvas, x, y, text):
 
 #préparation du canvas
 window = Tk()
-w = Canvas(window, width=1000, height=800, bg='white')
+w = Canvas(window, width=1000, height=650, bg='white')
 
 # le table de mappage permet de relier les informations fournies par le backend
 # Il transforme le déplacement par des positions dans le canvas
@@ -155,31 +156,41 @@ def dessin():
     time.sleep(2)
 
 # chargement des questions depuis le fichier json
-def chargement_question():
-    with open ("liste_questions.json", "r") as file:
+def chargement_question(numero : int):
+    with open ("liste_questions.json", "r", encoding="utf-8") as file:
         data = json.load(file)
-    question1 = list(data[0]["theme1"].keys())[0]
-    return question1
+    question = list(data[0]["theme1"].keys())[numero]
+    #print(list(data[0]["theme1"].values()))
+    return question
+
+# chargement des reponses depuis le fichier json
+def chargement_reponse(numero : int):
+    with open ("liste_questions.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    reponse = list(data[0]["theme1"].values())[numero]
+    return reponse
 
 # ajouter les différents boutons et labels dans l'interface principale
 def bouton():
     
-    global jouer, lancer, valider, resultat
+    global jouer, lancer, valider, resultat, reponse, question
     global a
     
-    #a = random.randint(1,6)
-    question = chargement_question()
+    global numero_question 
+    numero_question = -1 #random.randint(0, 2)
+    #print("num ques",numero_question)
+    questionjson = ""# chargement_question(numero_question)
    
     #label résultat du dé
     resultat = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "Le résultat du dé est : ")
     #bouton jouer
     jouer = tkinter.Button(window,text= "Jouer", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, state = "normal", command = clicbutton )
     #label de la question
-    question = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "La question est : "+question )
+    question = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "La question est : "+questionjson )
     #input de la réponse
     reponse = tkinter.Entry(window, font=("Arial", 12), fg="blue")
     #bouton valider
-    valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised",state = "disable", bd=5)
+    valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised",state = "disable", bd=5, command = validerbutton)
 
     # utilisation du pack pour l'organisation des boutons et labels
     resultat.pack()
@@ -188,7 +199,7 @@ def bouton():
     reponse.pack()
     valider.pack()
 
-    return jouer, valider, resultat
+    return jouer, valider, resultat, reponse, question
 
 #activer le bouton jouer
 def activer_ok():
@@ -216,13 +227,20 @@ def reponse():
 
 # mouvement représente le déplacement dans le jeu
 def mouvement():
-    c = random.randint(1,6)
-    print(c)
+    #c = random.randint(1,6)
+    #print(c)
+    resultat_de = joueur.lancer_de()
+    print(resultat_de)
     global deplacement
-    deplacement += c
+    deplacement += resultat_de
     if deplacement >= 128:
         deplacement = 100
-    return deplacement, c
+    return deplacement, resultat_de
+
+# creation Joeur
+def creation_joueur():
+    global joueur
+    joueur = Joueur("wael", 0)
 
 # afficher le cercle qui représente le déplacement
 def clicbutton():
@@ -239,8 +257,43 @@ def clicbutton():
     circlee = circle(w, abso, ordo, 5, 10, "de")
     w.pack()
     w.update()
+    global numero_question
+    numero_question = random.randint(0, 2)
+    print("num ques",numero_question)
+    questionjson = chargement_question(numero_question)
+    print("num ques",questionjson)
+    question.config(text="La question est : "+questionjson)
+
+def validerbutton():
+    print("validerbutton")
+    reponsejoueur = reponse.get()
+    reponsejson = chargement_reponse(numero_question)
+    
+    if reponsejoueur.lower() == str(reponsejson).lower():
+        valider.config(state = "disabled")
+        jouer.config(state="normal")
+    else:
+        reponseb = messagebox.askyesno("Partie terminée", "Voulez-vous continuer depuis la case de départ?")
+        if reponseb:  # Si "Oui" est sélectionné
+            print("Vous avez répondu Oui")
+            global deplacement
+            deplacement = 100
+            w.delete("de")
+            abso, ordo = table_mappage[str(deplacement)]
+            circlee = circle(w, abso, ordo, 5, 10, "de")
+            w.pack()
+            valider.config(state = "disabled")
+            jouer.config(state="normal")
+            question.config(text="La question est : ")
+            resultat.config(text="Le résultat du dé est : ")
+            w.update()
+        else:  # Si "Non" est sélectionné
+            print("Vous avez répondu Non")
+            window.quit()
+            
 
 #appel des différentes méthodes
 dessin()
 bouton()
+creation_joueur()
 mainloop()
