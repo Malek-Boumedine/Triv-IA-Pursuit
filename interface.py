@@ -1,5 +1,5 @@
 import json
-from tkinter import Canvas, mainloop, Tk, messagebox
+from tkinter import Canvas, mainloop, Tk, messagebox, END, Button
 import time
 import tkinter
 import random
@@ -30,7 +30,7 @@ w = Canvas(window, width=1000, height=650, bg='white')
 table_mappage ={}
 
 # la case d'origine commence par le numero 100 dans la table de mappage
-deplacement = 100
+deplacement = 105
 print(deplacement)
 
 # dessine le jeu 
@@ -167,13 +167,14 @@ def chargement_question(numero : int):
 def chargement_reponse(numero : int):
     with open ("liste_questions.json", "r", encoding="utf-8") as file:
         data = json.load(file)
-    reponse = list(data[0]["theme1"].values())[numero]
-    return reponse
+    reponse_facile = list(data[0]["theme1"].values())[numero]
+    return reponse_facile
+
 
 # ajouter les différents boutons et labels dans l'interface principale
 def bouton():
     
-    global jouer, lancer, valider, resultat, reponse, question
+    global jouer, lancer, valider, resultat, reponse, question, passe
     global a
     
     global numero_question 
@@ -191,6 +192,8 @@ def bouton():
     reponse = tkinter.Entry(window, font=("Arial", 12), fg="blue")
     #bouton valider
     valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised",state = "disable", bd=5, command = validerbutton)
+    #bouton passer
+    passe = tkinter.Button(window,text = "Passer la question", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", state = "disable", bd=5, command = passerbutton)
 
     # utilisation du pack pour l'organisation des boutons et labels
     resultat.pack()
@@ -198,8 +201,28 @@ def bouton():
     question.pack()
     reponse.pack()
     valider.pack()
+    passe.pack()
 
-    return jouer, valider, resultat, reponse, question
+    return jouer, valider, resultat, reponse, question, passe
+
+def passerbutton():
+    
+    
+    passe.config(state = "normal")
+    global deplacement
+    deplacement = 100
+    w.delete("de")
+    abso, ordo = table_mappage[str(deplacement)]
+    circlee = circle(w, abso, ordo, 5, 10, "de")
+    w.pack()
+    valider.config(state = "disabled")
+    jouer.config(state="normal")
+    question.config(text="La question est : ")
+    resultat.config(text="Le résultat du dé est : ")
+    w.update()
+    passe.config(state = "disabled")
+
+
 
 #activer le bouton jouer
 def activer_ok():
@@ -216,14 +239,7 @@ def active_de():
     else:
         jouer.config(state = "disabled") 
     
-    return  pas
-
-def reponse():
-    etat = jouer.cget("state")
-    if etat == "normal":
-        valider.config(state = "normal")
-    else :
-        valider.config(state = "disable")
+    return pas
 
 # mouvement représente le déplacement dans le jeu
 def mouvement():
@@ -245,9 +261,10 @@ def creation_joueur():
 # afficher le cercle qui représente le déplacement
 def clicbutton():
     etat = jouer.cget("state")
-    if etat == "normal":
+    if etat == "normal" or "active":
         valider.config(state = "normal")
         jouer.config(state="disabled")
+        passe.config(state = "normal")
     w.delete("de")
     w.update()
     deplacer, pas = mouvement()
@@ -258,11 +275,12 @@ def clicbutton():
     w.pack()
     w.update()
     global numero_question
-    numero_question = random.randint(0, 2)
+    numero_question = random.randint(0, 11)
     print("num ques",numero_question)
     questionjson = chargement_question(numero_question)
     print("num ques",questionjson)
     question.config(text="La question est : "+questionjson)
+
 
 def validerbutton():
     print("validerbutton")
@@ -272,6 +290,7 @@ def validerbutton():
     if reponsejoueur.lower() == str(reponsejson).lower():
         valider.config(state = "disabled")
         jouer.config(state="normal")
+        reponse.delete(0, END)
     else:
         reponseb = messagebox.askyesno("Partie terminée", "Voulez-vous continuer depuis la case de départ?")
         if reponseb:  # Si "Oui" est sélectionné
@@ -290,7 +309,9 @@ def validerbutton():
         else:  # Si "Non" est sélectionné
             print("Vous avez répondu Non")
             window.quit()
-            
+    
+
+
 
 #appel des différentes méthodes
 dessin()
