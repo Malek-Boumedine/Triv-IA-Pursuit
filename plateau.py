@@ -9,14 +9,14 @@ class Plateau :
     with open("liste_questions copy.json", "r") as fichier:          # importer les thèmes depuis le fichier de questions
         donnees_questions = json.load(fichier)
     THEMES = list(donnees_questions[0].keys())
-    rouge, vert, jaune, bleu, magenta, gris, default = "\033[91m", "\033[92m", "\033[93m", '\033[94m', '\033[35m', '\033[90m', '\033[99m'
+    rouge, vert, jaune, bleu, magenta, marron, default = "\033[91m", "\033[92m", "\033[93m", '\033[94m', '\033[35m', '\033[33m', '\033[99m'
 
     COULEURS = {THEMES[0] : rouge, 
                 THEMES[1] : vert,
                 THEMES[2] : jaune,
                 THEMES[3] : bleu,
                 THEMES[4] : magenta,
-                THEMES[5] : gris}
+                THEMES[5] : marron}
     
     def __init__(self) :
         self.cases = {}     # dictionnaire avec clé : int et valeur: Case
@@ -40,13 +40,13 @@ class Plateau :
             elif i % 7 == 3:  # case relance toutes les 3 cases
                 self.cases[i] = Case("relance", i, None, None)
             
-            else:  # cases normales
-                themes_autres = themes_camemberts.copy()
+            else:  # cases normales 
+                themes_autres = themes_camemberts.copy() 
                 if theme_c in themes_autres : 
-                    themes_autres.remove(theme_c)
-                random.shuffle(themes_autres)
-                theme_case = themes_autres[0]
-                self.cases[i] = Case("normale", i, theme_case, Plateau.COULEURS[theme_case])
+                    themes_autres.remove(theme_c) 
+                random.shuffle(themes_autres) 
+                theme_case = themes_autres[0] 
+                self.cases[i] = Case("normale", i, theme_case, Plateau.COULEURS[theme_case]) 
     
     def ajouter_joueur(self, joueur : Joueur):
         self.joueurs.append(joueur)
@@ -87,7 +87,7 @@ class Plateau :
             matrice[7][colonnes-1-i] = self.cases[14+i]      
 
         # Affichage de la matrice
-        for ligne in matrice:
+        for ligne in matrice :
             print(' '.join(f"{str(elem)}" for elem in ligne))
 
 
