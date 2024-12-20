@@ -1,13 +1,14 @@
 import json
-from tkinter import Canvas, mainloop, Tk
+from tkinter import END, Canvas, mainloop, Tk, messagebox
 import time
 import tkinter
 import random
+from joueur import *
 
 # dessiner un cercle dans un canvas
 # le tag permet d'identifier le cercle dans le canvas 
-def circle(canvas, x, y, r, width, name=""):
-    return canvas.create_oval(x+r, y+r, x-r, y-r, width=width, tags=name)
+def circle(canvas, x, y, r, width, name="", couleur=""):
+    return canvas.create_oval(x+r, y+r, x-r, y-r, width=width, tags=name, fill=couleur)
 
 # fun_tracage1 assure le calcul de l'ordonnée y du point central du cercle
 # x : paramètre d'entrée qui représente l'abscisse du centre
@@ -21,7 +22,7 @@ def text(canvas, x, y, text):
 
 #préparation du canvas
 window = Tk()
-w = Canvas(window, width=1000, height=800, bg='white')
+w = Canvas(window, width=1000, height=650, bg='white')
 
 # le table de mappage permet de relier les informations fournies par le backend
 # Il transforme le déplacement par des positions dans le canvas
@@ -42,12 +43,12 @@ print(deplacement)
 # Garder les prints pour la vérification
 
 def dessin():
-    circle(w, 50, 300, 20, 3)
+    circle(w, 50, 300, 20, 3, "", "red")
     #text(w, 50, 300, 'P0')
     table_mappage['114']=(50, 300)
 
     for i in range(100, 350, 50):
-        circle(w, i, 300, 10, 3)
+        circle(w, i, 300, 10, 3, "", "green")
         #text(w, i, 300, 'P')
         #print(i)
     table_mappage['052']=(100, 300)
@@ -56,13 +57,13 @@ def dessin():
     table_mappage['022']=(250, 300)
     table_mappage['012']=(300, 300)
 
-    circle(w, 350, 300, 20, 3)
+    circle(w, 350, 300, 20, 3, "", "red")
     #table_mappage['000']=(350, 300)
     #abs, ord = table_mappage['000']
     #text(w, ord, abs, 'P')
 
     for i in range(400, 650, 50):
-        circle(w, i, 300, 10, 3)
+        circle(w, i, 300, 10, 3, "", "green")
         #print(i)
 
     table_mappage['010']=(400, 300)
@@ -71,11 +72,11 @@ def dessin():
     table_mappage['040']=(550, 300)
     table_mappage['050']=(600, 300)
 
-    circle(w, 650, 300, 20, 3)
+    circle(w, 650, 300, 20, 3, "", "red")
     table_mappage['100']=(650, 300)
 
     for i in range(350, 600, 50):
-        circle(w, 350, i, 10, 3)
+        circle(w, 350, i, 10, 3, "", "green")
         #print(i)
 
     table_mappage['011']=(350, 350)
@@ -84,11 +85,11 @@ def dessin():
     table_mappage['041']=(350, 500)
     table_mappage['051']=(350, 550)
 
-    circle(w, 350, 600, 20, 3)
+    circle(w, 350, 600, 20, 3, "", "red")
     table_mappage['107']=(350, 600) 
 
     for i in range(50, 300, 50):
-        circle(w, 350, i, 10, 3)
+        circle(w, 350, i, 10, 3, "", "green")
         #print(i)
     table_mappage['053']=(350, 50)
     table_mappage['043']=(350, 100)
@@ -96,11 +97,11 @@ def dessin():
     table_mappage['023']=(350, 200)
     table_mappage['013']=(350, 250)
 
-    circle(w, 350, 0, 20, 3)
+    circle(w, 350, 0, 20, 3, "", "red")
     table_mappage['121']=(350, 0)
 
     for i in range(400, 601, 40):
-        circle(w, i, fun_tracage1(1, -350, i), 10, 3)
+        circle(w, i, fun_tracage1(1, -350, i), 10, 3, "", "blue")
         #print(i," ", fun_tracage1(1, -350, i))
 
     table_mappage['122']=(400, 50)   
@@ -113,7 +114,7 @@ def dessin():
     print("###")
 
     for i in range(390, 601, 40):
-        circle(w, i, fun_tracage1(-1, 950, i), 10, 3)
+        circle(w, i, fun_tracage1(-1, 950, i), 10, 3, "", "blue")
         #print(i," ", fun_tracage1(-1, 950, i))
 
     table_mappage['106']=(390, 560)   
@@ -126,7 +127,7 @@ def dessin():
     print("###")
 
     for i in range(100, 301, 40):
-        circle(w, i, fun_tracage1(1, 250, i), 10, 3)
+        circle(w, i, fun_tracage1(1, 250, i), 10, 3, "", "blue")
         #print(i," ", fun_tracage1(1, 250, i))
 
     table_mappage['113']=(100, 350)   
@@ -138,7 +139,7 @@ def dessin():
     print("###")
 
     for i in range(100, 301, 40):
-        circle(w, i, fun_tracage1(-1, 350, i), 10, 3)
+        circle(w, i, fun_tracage1(-1, 350, i), 10, 3, "", "blue")
         #print(i," ", fun_tracage1(-1, 350, i))
 
     table_mappage['120']=(290, 60)  
@@ -155,31 +156,41 @@ def dessin():
     time.sleep(2)
 
 # chargement des questions depuis le fichier json
-def chargement_question():
-    with open ("liste_questions.json", "r") as file:
+def chargement_question(numero : int):
+    with open ("liste_questions.json", "r", encoding="utf-8") as file:
         data = json.load(file)
-    question1 = list(data[0]["theme1"].keys())[0]
-    return question1
+    question = list(data[0]["theme1"].keys())[numero]
+    #print(list(data[0]["theme1"].values()))
+    return question
+
+# chargement des reponses depuis le fichier json
+def chargement_reponse(numero : int):
+    with open ("liste_questions.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+    reponse = list(data[0]["theme1"].values())[numero]
+    return reponse
 
 # ajouter les différents boutons et labels dans l'interface principale
 def bouton():
     
-    global jouer, lancer, valider, resultat
+    global jouer, lancer, valider, resultat, reponse, question
     global a
     
-    #a = random.randint(1,6)
-    question = chargement_question()
+    global numero_question 
+    numero_question = -1 #random.randint(0, 2)
+    #print("num ques",numero_question)
+    questionjson = ""# chargement_question(numero_question)
    
     #label résultat du dé
     resultat = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "Le résultat du dé est : ")
     #bouton jouer
     jouer = tkinter.Button(window,text= "Jouer", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised", bd=5, state = "normal", command = clicbutton )
     #label de la question
-    question = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "La question est : "+question )
+    question = tkinter.Label(window, font =("Arial", 12, "bold"), bd=5, text = "La question est : "+questionjson )
     #input de la réponse
     reponse = tkinter.Entry(window, font=("Arial", 12), fg="blue")
     #bouton valider
-    valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised",state = "disable", bd=5)
+    valider = tkinter.Button(window,text = "Valider la réponse", bg = "blue", fg = "white", font =("Arial", 12, "bold"), relief="raised",state = "disable", bd=5, command = validerbutton)
 
     # utilisation du pack pour l'organisation des boutons et labels
     resultat.pack()
@@ -188,7 +199,7 @@ def bouton():
     reponse.pack()
     valider.pack()
 
-    return jouer, valider, resultat
+    return jouer, valider, resultat, reponse, question
 
 #activer le bouton jouer
 def activer_ok():
@@ -209,13 +220,24 @@ def active_de():
 
 # mouvement représente le déplacement dans le jeu
 def mouvement():
-    c = random.randint(1,6)
-    print(c)
+    #c = random.randint(1,6)
+    #print(c)
+    resultat_de = joueur.lancer_de()
+    print(resultat_de)
     global deplacement
-    deplacement += c
+    deplacement += resultat_de
     if deplacement >= 128:
         deplacement = 100
-    return deplacement, c
+    return deplacement, resultat_de
+
+# creation Joeur
+def creation_joueur():
+    global joueur
+    joueur = Joueur("wael", 0)
+    abso, ordo = table_mappage[str(100)]
+    circlee = circle(w, abso, ordo, 5, 10, "de")
+    w.pack()
+    w.update()
 
 # afficher le cercle qui représente le déplacement
 def clicbutton():
@@ -232,8 +254,44 @@ def clicbutton():
     circlee = circle(w, abso, ordo, 5, 10, "de")
     w.pack()
     w.update()
+    global numero_question
+    numero_question = random.randint(0, 2)
+    print("num ques",numero_question)
+    questionjson = chargement_question(numero_question)
+    print("num ques",questionjson)
+    question.config(text="La question est : "+questionjson)
+
+def validerbutton():
+    print("validerbutton")
+    reponsejoueur = reponse.get()
+    reponsejson = chargement_reponse(numero_question)
+    
+    if reponsejoueur.lower() == str(reponsejson).lower():
+        valider.config(state = "disabled")
+        jouer.config(state="normal")
+        reponse.delete(0, END)
+    else:
+        reponseb = messagebox.askyesno("Partie terminée", "Voulez-vous continuer depuis la case de départ?")
+        if reponseb:  # Si "Oui" est sélectionné
+            print("Vous avez répondu Oui")
+            global deplacement
+            deplacement = 100
+            w.delete("de")
+            abso, ordo = table_mappage[str(deplacement)]
+            circlee = circle(w, abso, ordo, 5, 10, "de")
+            w.pack()
+            valider.config(state = "disabled")
+            jouer.config(state="normal")
+            question.config(text="La question est : ")
+            resultat.config(text="Le résultat du dé est : ")
+            w.update()
+        else:  # Si "Non" est sélectionné
+            print("Vous avez répondu Non")
+            window.quit()
+            
 
 #appel des différentes méthodes
 dessin()
 bouton()
+creation_joueur()
 mainloop()
