@@ -1,6 +1,6 @@
 class Case:
     TYPES_CASES = ["camembert", "relance", "normale"]
-    rouge, vert, jaune, bleu, magenta, gris, default = "\033[91m", "\033[92m", "\033[93m", '\033[94m', '\033[35m', '\033[90m', '\033[99m'
+    rouge, vert, jaune, bleu, magenta, marron, default = "\033[91m", "\033[92m", "\033[93m", '\033[94m', '\033[35m', '\033[33m', '\033[99m'
 
     
     def __init__(self, type_case : str, coordonnees : int, theme : str, couleur : str, joueur_dessus : bool = False):
@@ -30,7 +30,7 @@ class Case:
     
     def __str__(self):
         if self.type_case == "relance":
-            return f"\033[30m▼▼{Case.default}" if self.joueur_dessus else "⬛"
+            return f"\033[37m▼▼{Case.default}" if self.joueur_dessus else "🎲"
         else : 
             if self.couleur == Case.rouge : 
                 return f"\033[91m▼▼{Case.default}" if self.joueur_dessus else "🟥"
@@ -42,9 +42,11 @@ class Case:
                 return f"\033[94m▼▼{Case.default}" if self.joueur_dessus else "🟦"
             elif self.couleur == Case.magenta : 
                 return f"\033[35m▼▼{Case.default}" if self.joueur_dessus else "🟪"
-            elif self.couleur == Case.gris : 
-                return f"\033[37m▼▼{Case.default}" if self.joueur_dessus else "⬜"
-            else:
+            elif self.couleur == Case.marron : 
+                return f"\033[33m▼▼{Case.default}" if self.joueur_dessus else "🟫"
+            else: 
                 return
 
 
+# print("\033[37mTexte en blanc\033[0m")
+# print("\033[90mTexte en gris clair\033[0m")

@@ -1,95 +1,771 @@
 [
     {
-        "theme1": {
+        "histoire": {
             "question1": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "En quelle année a eu lieu la Révolution française ?",
+                "reponses": ["1789", "1792", "1776", "1804"],
+                "reponse_correcte": "1789"
             },
             "question2": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "Qui était le premier empereur romain ?",
+                "reponses": ["Auguste", "Jules César", "Néron", "Constantin"],
+                "reponse_correcte": "Auguste"
+            },
+            "question3": {
+                "enonce": "Quel roi de France était surnommé le Roi-Soleil ?",
+                "reponses": ["Louis XIV", "Louis XVI", "Louis XIII", "Louis XV"],
+                "reponse_correcte": "Louis XIV"
+            },
+            "question4": {
+                "enonce": "En quelle année s'est terminée la Seconde Guerre mondiale ?",
+                "reponses": ["1945", "1944", "1943", "1946"],
+                "reponse_correcte": "1945"
+            },
+            "question5": {
+                "enonce": "Qui a découvert l'Amérique en 1492 ?",
+                "reponses": ["Christophe Colomb", "Vasco de Gama", "Marco Polo", "Amerigo Vespucci"],
+                "reponse_correcte": "Christophe Colomb"
+            },
+            "question6": {
+                "enonce": "Quelle était la capitale de l'Empire byzantin ?",
+                "reponses": ["Constantinople", "Rome", "Athènes", "Alexandrie"],
+                "reponse_correcte": "Constantinople"
+            },
+            "question7": {
+                "enonce": "Qui était le premier président des États-Unis ?",
+                "reponses": ["George Washington", "Thomas Jefferson", "Benjamin Franklin", "John Adams"],
+                "reponse_correcte": "George Washington"
+            },
+            "question8": {
+                "enonce": "En quelle année est tombé le mur de Berlin ?",
+                "reponses": ["1989", "1991", "1988", "1990"],
+                "reponse_correcte": "1989"
+            },
+            "question9": {
+                "enonce": "Quel pharaon est connu pour son tombeau découvert intact en 1922 ?",
+                "reponses": ["Toutânkhamon", "Ramsès II", "Khéops", "Cléopâtre"],
+                "reponse_correcte": "Toutânkhamon"
+            },
+            "question10": {
+                "enonce": "Quelle bataille a marqué la fin de Napoléon Bonaparte ?",
+                "reponses": ["Waterloo", "Austerlitz", "Trafalgar", "Leipzig"],
+                "reponse_correcte": "Waterloo"
+            },
+            "question11": {
+                "enonce": "Qui était le chef de la résistance française pendant la Seconde Guerre mondiale ?",
+                "reponses": ["Charles de Gaulle", "Philippe Pétain", "Jean Moulin", "Pierre Laval"],
+                "reponse_correcte": "Charles de Gaulle"
+            },
+            "question12": {
+                "enonce": "En quelle année a eu lieu la révolution russe ?",
+                "reponses": ["1917", "1905", "1921", "1914"],
+                "reponse_correcte": "1917"
+            },
+            "question13": {
+                "enonce": "Qui était la première femme à recevoir un Prix Nobel ?",
+                "reponses": ["Marie Curie", "Mother Teresa", "Pearl Buck", "Jane Addams"],
+                "reponse_correcte": "Marie Curie"
+            },
+            "question14": {
+                "enonce": "Quel événement a déclenché la Première Guerre mondiale ?",
+                "reponses": ["L'assassinat de l'archiduc François-Ferdinand", "L'invasion de la Pologne", "Le traité de Versailles", "La révolution russe"],
+                "reponse_correcte": "L'assassinat de l'archiduc François-Ferdinand"
+            },
+            "question15": {
+                "enonce": "Qui était le dernier empereur de Chine ?",
+                "reponses": ["Puyi", "Sun Yat-sen", "Kangxi", "Qianlong"],
+                "reponse_correcte": "Puyi"
+            },
+            "question16": {
+                "enonce": "En quelle année l'homme a-t-il marché sur la Lune pour la première fois ?",
+                "reponses": ["1969", "1965", "1971", "1967"],
+                "reponse_correcte": "1969"
+            },
+            "question17": {
+                "enonce": "Quel traité a mis fin à la Première Guerre mondiale ?",
+                "reponses": ["Le traité de Versailles", "Le traité de Paris", "Le traité de Londres", "Le traité de Rome"],
+                "reponse_correcte": "Le traité de Versailles"
+            },
+            "question18": {
+                "enonce": "Qui était le premier roi de France ?",
+                "reponses": ["Clovis", "Charlemagne", "Pépin le Bref", "Hugues Capet"],
+                "reponse_correcte": "Clovis"
+            },
+            "question19": {
+                "enonce": "Quelle était la capitale de l'Empire inca ?",
+                "reponses": ["Cuzco", "Machu Picchu", "Lima", "Quito"],
+                "reponse_correcte": "Cuzco"
+            },
+            "question20": {
+                "enonce": "En quelle année a été signée la Déclaration d'indépendance des États-Unis ?",
+                "reponses": ["1776", "1783", "1774", "1781"],
+                "reponse_correcte": "1776"
             }
         },
-        "theme2": {
+        "geographie": {
             "question1": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "Quel est le plus grand pays du monde en superficie ?",
+                "reponses": ["Russie", "Canada", "Chine", "États-Unis"],
+                "reponse_correcte": "Russie"
             },
             "question2": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "Quel est le plus long fleuve du monde ?",
+                "reponses": ["Nil", "Amazone", "Mississippi", "Yangtsé"],
+                "reponse_correcte": "Nil"
+            },
+            "question3": {
+                "enonce": "Dans quel pays se trouve le Taj Mahal ?",
+                "reponses": ["Inde", "Pakistan", "Bangladesh", "Népal"],
+                "reponse_correcte": "Inde"
+            },
+            "question4": {
+                "enonce": "Quelle est la capitale de l'Australie ?",
+                "reponses": ["Canberra", "Sydney", "Melbourne", "Brisbane"],
+                "reponse_correcte": "Canberra"
+            },
+            "question5": {
+                "enonce": "Quel est le plus haut sommet du monde ?",
+                "reponses": ["Mont Everest", "K2", "Mont Blanc", "Kilimandjaro"],
+                "reponse_correcte": "Mont Everest"
+            },
+            "question6": {
+                "enonce": "Quel est le plus grand désert du monde ?",
+                "reponses": ["Antarctique", "Sahara", "Gobi", "Atacama"],
+                "reponse_correcte": "Antarctique"
+            },
+            "question7": {
+                "enonce": "Quel pays compte le plus grand nombre d'îles au monde ?",
+                "reponses": ["Suède", "Indonésie", "Philippines", "Japon"],
+                "reponse_correcte": "Suède"
+            },
+            "question8": {
+                "enonce": "Quelle est la mer la plus salée du monde ?",
+                "reponses": ["Mer Morte", "Mer Rouge", "Mer Méditerranée", "Mer Caspienne"],
+                "reponse_correcte": "Mer Morte"
+            },
+            "question9": {
+                "enonce": "Quel est le plus petit pays du monde ?",
+                "reponses": ["Vatican", "Monaco", "Nauru", "Saint-Marin"],
+                "reponse_correcte": "Vatican"
+            },
+            "question10": {
+                "enonce": "Sur quel continent se trouve le lac Victoria ?",
+                "reponses": ["Afrique", "Asie", "Amérique du Sud", "Océanie"],
+                "reponse_correcte": "Afrique"
+            },
+            "question11": {
+                "enonce": "Quelle est la capitale du Canada ?",
+                "reponses": ["Ottawa", "Toronto", "Vancouver", "Montréal"],
+                "reponse_correcte": "Ottawa"
+            },
+            "question12": {
+                "enonce": "Quel est le plus grand océan du monde ?",
+                "reponses": ["Océan Pacifique", "Océan Atlantique", "Océan Indien", "Océan Arctique"],
+                "reponse_correcte": "Océan Pacifique"
+            },
+            "question13": {
+                "enonce": "Dans quel pays se trouve le Machu Picchu ?",
+                "reponses": ["Pérou", "Bolivie", "Équateur", "Colombie"],
+                "reponse_correcte": "Pérou"
+            },
+            "question14": {
+                "enonce": "Quelle est la plus grande île du monde ?",
+                "reponses": ["Groenland", "Nouvelle-Guinée", "Bornéo", "Madagascar"],
+                "reponse_correcte": "Groenland"
+            },
+            "question15": {
+                "enonce": "Quel pays a la plus grande population ?",
+                "reponses": ["Inde", "Chine", "États-Unis", "Indonésie"],
+                "reponse_correcte": "Inde"
+            },
+            "question16": {
+                "enonce": "Quel est le point le plus bas de la Terre ?",
+                "reponses": ["Fosse des Mariannes", "Mer Morte", "Lac Baïkal", "Grand Canyon"],
+                "reponse_correcte": "Fosse des Mariannes"
+            },
+            "question17": {
+                "enonce": "Combien y a-t-il de continents ?",
+                "reponses": ["7", "5", "6", "4"],
+                "reponse_correcte": "7"
+            },
+            "question18": {
+                "enonce": "Quel est le plus grand pays d'Afrique ?",
+                "reponses": ["Algérie", "République démocratique du Congo", "Soudan", "Libye"],
+                "reponse_correcte": "Algérie"
+            },
+            "question19": {
+                "enonce": "Quelle est la capitale du Brésil ?",
+                "reponses": ["Brasília", "Rio de Janeiro", "São Paulo", "Salvador"],
+                "reponse_correcte": "Brasília"
+            },
+            "question20": {
+                "enonce": "Quel détroit sépare l'Asie de l'Amérique du Nord ?",
+                "reponses": ["Détroit de Béring", "Détroit de Gibraltar", "Détroit de Malacca", "Détroit d'Ormuz"],
+                "reponse_correcte": "Détroit de Béring"
             }
         },
-        "theme3": {
+        "science_et_technologie": {
             "question1": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "Quelle est la planète la plus proche du Soleil ?",
+                "reponses": ["Mercure", "Vénus", "Mars", "Terre"],
+                "reponse_correcte": "Mercure"
             },
             "question2": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "Quel est le symbole chimique de l'or ?",
+                "reponses": ["Au", "Ag", "Fe", "Cu"],
+                "reponse_correcte": "Au"
+            },
+            "question3": {
+                "enonce": "Quelle est la vitesse de la lumière en km/s ?",
+                "reponses": ["299 792", "199 792", "399 792", "499 792"],
+                "reponse_correcte": "299 792"
+            },
+            "question4": {
+                "enonce": "Quel est l'os le plus long du corps humain ?",
+                "reponses": ["Fémur", "Tibia", "Humérus", "Radius"],
+                "reponse_correcte": "Fémur"
+            },
+            "question5": {
+                "enonce": "Qui a formulé la théorie de la relativité ?",
+                "reponses": ["Albert Einstein", "Isaac Newton", "Stephen Hawking", "Niels Bohr"],
+                "reponse_correcte": "Albert Einstein"
+            },
+            "question6": {
+                "enonce": "Quel est le plus petit os du corps humain ?",
+                "reponses": ["Étrier", "Marteau", "Enclume", "Phalange"],
+                "reponse_correcte": "Étrier"
+            },
+            "question7": {
+                "enonce": "Quelle est la formule chimique de l'eau ?",
+                "reponses": ["H2O", "CO2", "O2", "H2SO4"],
+                "reponse_correcte": "H2O"
+            },
+            "question8": {
+                "enonce": "Quel est le plus grand organe du corps humain ?",
+                "reponses": ["La peau", "Le foie", "Les poumons", "L'intestin"],
+                "reponse_correcte": "La peau"
+            },
+            "question9": {
+                "enonce": "Qui a inventé le téléphone ?",
+                "reponses": ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Guglielmo Marconi"],
+                "reponse_correcte": "Alexander Graham Bell"
+            },
+            "question10": {
+                "enonce": "Quel est le gaz le plus abondant dans l'atmosphère terrestre ?",
+                "reponses": ["Azote", "Oxygène", "Dioxyde de carbone", "Argon"],
+                "reponse_correcte": "Azote"
+            },
+            "question11": {
+                "enonce": "En quelle année a été créé le World Wide Web ?",
+                "reponses": ["1989", "1991", "1995", "1985"],
+                "reponse_correcte": "1989"
+            },
+            "question12": {
+                "enonce": "Quel est le nombre de chromosomes dans une cellule humaine normale ?",
+                "reponses": ["46", "23", "48", "44"],
+                "reponse_correcte": "46"
+            },
+            "question13": {
+                "enonce": "Quelle est la plus petite particule d'un élément chimique ?",
+                "reponses": ["Atome", "Molécule", "Électron", "Proton"],
+                "reponse_correcte": "Atome"
+            },
+            "question14": {
+                "enonce": "Quel est le principal composant du Soleil ?",
+                "reponses": ["Hydrogène", "Hélium", "Oxygène", "Carbone"],
+                "reponse_correcte": "Hydrogène"
+            },
+            "question15": {
+                "enonce": "Quelle est l'unité de mesure de la force électrique ?",
+                "reponses": ["Ampère", "Volt", "Watt", "Ohm"],
+                "reponse_correcte": "Ampère"
+            },
+            "question16": {
+                "enonce": "Quel scientifique a découvert la gravité ?",
+                "reponses": ["Isaac Newton", "Galilée", "Einstein", "Copernic"],
+                "reponse_correcte": "Isaac Newton"
+            },
+            "question17": {
+                "enonce": "Quel est le processus de conversion de la lumière en énergie par les plantes ?",
+                "reponses": ["Photosynthèse", "Respiration", "Fermentation", "Osmose"],
+                "reponse_correcte": "Photosynthèse"
+            },
+            "question18": {
+                "enonce": "Quelle est la température d'ébullition de l'eau pure au niveau de la mer ?",
+                "reponses": ["100°C", "90°C", "110°C", "95°C"],
+                "reponse_correcte": "100°C"
+            },
+            "question19": {
+                "enonce": "Quel est le symbole chimique du fer ?",
+                "reponses": ["Fe", "Fr", "Fi", "Fo"],
+                "reponse_correcte": "Fe"
+            },
+            "question20": {
+                "enonce": "Quelle planète est surnommée la planète rouge ?",
+                "reponses": ["Mars", "Vénus", "Jupiter", "Saturne"],
+                "reponse_correcte": "Mars"
             }
         },
-        "theme4": {
+        "sport": {
             "question1": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "En quelle année la France a-t-elle gagné sa première Coupe du monde de football ?",
+                "reponses": ["1998", "1994", "2002", "1990"],
+                "reponse_correcte": "1998"
             },
             "question2": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "Combien de joueurs composent une équipe de basketball sur le terrain ?",
+                "reponses": ["5", "6", "7", "4"],
+                "reponse_correcte": "5"
+            },
+            "question3": {
+                "enonce": "Dans quel sport utilise-t-on un volant ?",
+                "reponses": ["Badminton", "Tennis", "Squash", "Ping-pong"],
+                "reponse_correcte": "Badminton"
+            },
+            "question4": {
+                "enonce": "Qui détient le record du monde du 100m ?",
+                "reponses": ["Usain Bolt", "Carl Lewis", "Justin Gatlin", "Asafa Powell"],
+                "reponse_correcte": "Usain Bolt"
+            },
+            "question5": {
+                "enonce": "Dans quel pays ont eu lieu les premiers Jeux Olympiques modernes ?",
+                "reponses": ["Grèce", "France", "États-Unis", "Royaume-Uni"],
+                "reponse_correcte": "Grèce"
+            },
+            "question6": {
+                "enonce": "Combien de temps dure un match de football ?",
+                "reponses": ["90 minutes", "80 minutes", "85 minutes", "95 minutes"],
+                "reponse_correcte": "90 minutes"
+            },
+            "question7": {
+                "enonce": "Quel pays a remporté le plus de Coupes du monde de football ?",
+                "reponses": ["Brésil", "Allemagne", "Italie", "Argentine"],
+                "reponse_correcte": "Brésil"
+            },
+            "question8": {
+                "enonce": "Dans quel sport peut-on faire un 'strike' ?",
+                "reponses": ["Bowling", "Golf", "Cricket", "Baseball"],
+                "reponse_correcte": "Bowling"
+            },
+            "question9": {
+                "enonce": "Combien de points vaut un essai au rugby ?",
+                "reponses": ["5", "3", "4", "6"],
+                "reponse_correcte": "5"
+            },
+            "question10": {
+                "enonce": "Quel est le seul sport pratiqué sur la Lune ?",
+                "reponses": ["Golf", "Football", "Tennis", "Baseball"],
+                "reponse_correcte": "Golf"
+            },
+            "question11": {
+                "enonce": "Dans quel sport utilise-t-on un sabre ?",
+                "reponses": ["Escrime", "Kendo", "Karaté", "Judo"],
+                "reponse_correcte": "Escrime"
+            },
+            "question12": {
+                "enonce": "Quelle est la durée d'un match de tennis en sets gagnants (Grand Chelem masculin) ?",
+                "reponses": ["3 sets sur 5", "2 sets sur 3", "4 sets sur 7", "5 sets sur 9"],
+                "reponse_correcte": "3 sets sur 5"
+            },
+            "question13": {
+                "enonce": "Quelle équipe de NBA a remporté le plus de titres ?",
+                "reponses": ["Boston Celtics", "Los Angeles Lakers", "Chicago Bulls", "Golden State Warriors"],
+                "reponse_correcte": "Boston Celtics"
+            },
+            "question14": {
+                "enonce": "Quel est le diamètre d'un panier de basketball ?",
+                "reponses": ["45 cm", "50 cm", "40 cm", "55 cm"],
+                "reponse_correcte": "45 cm"
+            },
+            "question15": {
+                "enonce": "Dans quel sport utilise-t-on une raquette et une balle en caoutchouc ?",
+                "reponses": ["Squash", "Tennis", "Badminton", "Ping-pong"],
+                "reponse_correcte": "Squash"
+            },
+            "question16": {
+                "enonce": "Combien de joueurs composent une équipe de volleyball sur le terrain ?",
+                "reponses": ["6", "5", "7", "8"],
+                "reponse_correcte": "6"
+            },
+            "question17": {
+                "enonce": "Quel est le sport national du Japon ?",
+                "reponses": ["Sumo", "Judo", "Karaté", "Kendo"],
+                "reponse_correcte": "Sumo"
+            },
+            "question18": {
+                "enonce": "Quelle est la distance d'un marathon ?",
+                "reponses": ["42,195 km", "40 km", "45 km", "50 km"],
+                "reponse_correcte": "42,195 km"
+            },
+            "question19": {
+                "enonce": "Dans quel sport peut-on faire un 'hole in one' ?",
+                "reponses": ["Golf", "Bowling", "Billard", "Fléchettes"],
+                "reponse_correcte": "Golf"
+            },
+            "question20": {
+                "enonce": "Quel pays a inventé le tennis de table ?",
+                "reponses": ["Angleterre", "Chine", "Japon", "États-Unis"],
+                "reponse_correcte": "Angleterre"
             }
         },
-        "theme5": {
+        "culture_generale": {
             "question1": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "Qui a peint La Joconde ?",
+                "reponses": ["Léonard de Vinci", "Michel-Ange", "Raphaël", "Botticelli"],
+                "reponse_correcte": "Léonard de Vinci"
             },
             "question2": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "Quel est l'élément chimique le plus abondant dans l'univers ?",
+                "reponses": ["Hydrogène", "Hélium", "Oxygène", "Carbone"],
+                "reponse_correcte": "Hydrogène"
+            },
+            "question3": {
+                "enonce": "Qui a écrit 'Les Misérables' ?",
+                "reponses": ["Victor Hugo", "Émile Zola", "Honoré de Balzac", "Gustave Flaubert"],
+                "reponse_correcte": "Victor Hugo"
+            },
+            "question4": {
+                "enonce": "Quelle est la capitale de la Corée du Sud ?",
+                "reponses": ["Séoul", "Busan", "Tokyo", "Pékin"],
+                "reponse_correcte": "Séoul"
+            },
+            "question5": {
+                "enonce": "En quelle année a été créé Facebook ?",
+                "reponses": ["2004", "2003", "2005", "2006"],
+                "reponse_correcte": "2004"
+            },
+            "question6": {
+                "enonce": "Quel est le plus grand mammifère terrestre ?",
+                "reponses": ["Éléphant d'Afrique", "Rhinocéros blanc", "Girafe", "Hippopotame"],
+                "reponse_correcte": "Éléphant d'Afrique"
+            },
+            "question7": {
+                "enonce": "Qui a composé la 9e symphonie ?",
+                "reponses": ["Beethoven", "Mozart", "Bach", "Tchaïkovski"],
+                "reponse_correcte": "Beethoven"
+            },
+            "question8": {
+                "enonce": "Quel est le plus grand océan du monde ?",
+                "reponses": ["Océan Pacifique", "Océan Atlantique", "Océan Indien", "Océan Arctique"],
+                "reponse_correcte": "Océan Pacifique"
+            },
+            "question9": {
+                "enonce": "Qui est l'auteur de '1984' ?",
+                "reponses": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Philip K. Dick"],
+                "reponse_correcte": "George Orwell"
+            },
+            "question10": {
+                "enonce": "Quel est le métal le plus précieux ?",
+                "reponses": ["Rhodium", "Or", "Platine", "Palladium"],
+                "reponse_correcte": "Rhodium"
+            },
+            "question11": {
+                "enonce": "Quelle est la plus haute montagne d'Europe ?",
+                "reponses": ["Mont Elbrouz", "Mont Blanc", "Cervin", "Mont Rose"],
+                "reponse_correcte": "Mont Elbrouz"
+            },
+            "question12": {
+                "enonce": "Qui a inventé l'ampoule électrique ?",
+                "reponses": ["Thomas Edison", "Nikola Tesla", "Alexander Graham Bell", "Benjamin Franklin"],
+                "reponse_correcte": "Thomas Edison"
+            },
+            "question13": {
+                "enonce": "Quel est le plus long fleuve d'Europe ?",
+                "reponses": ["Volga", "Danube", "Rhin", "Seine"],
+                "reponse_correcte": "Volga"
+            },
+            "question14": {
+                "enonce": "Qui a peint 'La Nuit étoilée' ?",
+                "reponses": ["Vincent van Gogh", "Claude Monet", "Pablo Picasso", "Salvador Dalí"],
+                "reponse_correcte": "Vincent van Gogh"
+            },
+            "question15": {
+                "enonce": "Quel est le plus petit pays d'Europe ?",
+                "reponses": ["Vatican", "Monaco", "Saint-Marin", "Liechtenstein"],
+                "reponse_correcte": "Vatican"
+            },
+            "question16": {
+                "enonce": "Qui est l'inventeur du World Wide Web ?",
+                "reponses": ["Tim Berners-Lee", "Steve Jobs", "Bill Gates", "Mark Zuckerberg"],
+                "reponse_correcte": "Tim Berners-Lee"
+            },
+            "question17": {
+                "enonce": "Quel est l'animal le plus rapide du monde ?",
+                "reponses": ["Guépard", "Antilope", "Faucon pèlerin", "Lion"],
+                "reponse_correcte": "Faucon pèlerin"
+            },
+            "question18": {
+                "enonce": "Qui a écrit 'Le Petit Prince' ?",
+                "reponses": ["Antoine de Saint-Exupéry", "Jules Verne", "Albert Camus", "Marcel Proust"],
+                "reponse_correcte": "Antoine de Saint-Exupéry"
+            },
+            "question19": {
+                "enonce": "Quelle est la plus grande île du monde ?",
+                "reponses": ["Groenland", "Nouvelle-Guinée", "Bornéo", "Madagascar"],
+                "reponse_correcte": "Groenland"
+            },
+            "question20": {
+                "enonce": "Quel est le symbole chimique du plomb ?",
+                "reponses": ["Pb", "Pl", "Pd", "Po"],
+                "reponse_correcte": "Pb"
             }
         },
-        "theme6": {
+        "divertissement": {
             "question1": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "Quel film a remporté le plus d'Oscars ?",
+                "reponses": ["Ben-Hur, Titanic et Le Seigneur des Anneaux 3 (11)", "La La Land (8)", "Avatar (9)", "Le Parrain (10)"],
+                "reponse_correcte": "Ben-Hur, Titanic et Le Seigneur des Anneaux 3 (11)"
             },
             "question2": {
-                "enonce" : "quelle est la premiere question ?",
-                "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-                "reponse_correcte" : "reponse1"
+                "enonce": "Qui est le créateur de Mickey Mouse ?",
+                "reponses": ["Walt Disney", "Ub Iwerks", "Chuck Jones", "Max Fleischer"],
+                "reponse_correcte": "Walt Disney"
+            },
+            "question3": {
+                "enonce": "Quel groupe a sorti l'album 'Abbey Road' ?",
+                "reponses": ["The Beatles", "The Rolling Stones", "Pink Floyd", "Led Zeppelin"],
+                "reponse_correcte": "The Beatles"
+            },
+            "question4": {
+                "enonce": "Qui joue Iron Man dans l'univers cinématographique Marvel ?",
+                "reponses": ["Robert Downey Jr.", "Chris Evans", "Chris Hemsworth", "Mark Ruffalo"],
+                "reponse_correcte": "Robert Downey Jr."
+            },
+            "question5": {
+                "enonce": "Quel est le jeu vidéo le plus vendu de tous les temps ?",
+                "reponses": ["Minecraft", "Tetris", "Grand Theft Auto V", "Super Mario Bros"],
+                "reponse_correcte": "Minecraft"
+            },
+            "question6": {
+                "enonce": "Qui a écrit 'Harry Potter' ?",
+                "reponses": ["J.K. Rowling", "Stephen King", "C.S. Lewis", "Roald Dahl"],
+                "reponse_correcte": "J.K. Rowling"
+            },
+            "question7": {
+                "enonce": "Quel acteur a joué James Bond le plus longtemps ?",
+                "reponses": ["Roger Moore", "Sean Connery", "Daniel Craig", "Pierce Brosnan"],
+                "reponse_correcte": "Roger Moore"
+            },
+            "question8": {
+                "enonce": "Quelle série détient le record du plus grand nombre d'Emmy Awards ?",
+                "reponses": ["Game of Thrones", "Les Sopranos", "Breaking Bad", "Friends"],
+                "reponse_correcte": "Game of Thrones"
+            },
+            "question9": {
+                "enonce": "Qui est le 'King of Pop' ?",
+                "reponses": ["Michael Jackson", "Elvis Presley", "Prince", "David Bowie"],
+                "reponse_correcte": "Michael Jackson"
+            },
+            "question10": {
+                "enonce": "Quel est le film d'animation le plus rentable de tous les temps ?",
+                "reponses": ["Le Roi Lion (2019)", "Frozen", "Les Indestructibles 2", "Toy Story 4"],
+                "reponse_correcte": "Le Roi Lion (2019)"
+            },
+            "question11": {
+                "enonce": "Qui a créé les personnages de Marvel Comics ?",
+                "reponses": ["Stan Lee", "Bob Kane", "Jack Kirby", "Steve Ditko"],
+                "reponse_correcte": "Stan Lee"
+            },
+            "question12": {
+                "enonce": "Quel est le premier film parlant de l'histoire ?",
+                "reponses": ["Le Chanteur de Jazz", "Metropolis", "Le Kid", "Les Lumières de la ville"],
+                "reponse_correcte": "Le Chanteur de Jazz"
+            },
+            "question13": {
+                "enonce": "Qui est le réalisateur du film 'Inception' ?",
+                "reponses": ["Christopher Nolan", "Steven Spielberg", "Martin Scorsese", "Quentin Tarantino"],
+                "reponse_correcte": "Christopher Nolan"
+            },
+            "question14": {
+                "enonce": "Quel groupe a sorti l'album 'Dark Side of the Moon' ?",
+                "reponses": ["Pink Floyd", "Led Zeppelin", "The Beatles", "The Rolling Stones"],
+                "reponse_correcte": "Pink Floyd"
+            },
+            "question15": {
+                "enonce": "Qui est le personnage principal de la série 'Breaking Bad' ?",
+                "reponses": ["Walter White", "Jesse Pinkman", "Saul Goodman", "Gus Fring"],
+                "reponse_correcte": "Walter White"
+            },
+            "question16": {
+                "enonce": "Quel est le premier film de la saga Star Wars ?",
+                "reponses": ["Un nouvel espoir", "L'Empire contre-attaque", "La Menace fantôme", "Le Retour du Jedi"],
+                "reponse_correcte": "Un nouvel espoir"
+            },
+            "question17": {
+                "enonce": "Qui a composé la musique du 'Roi Lion' ?",
+                "reponses": ["Hans Zimmer", "John Williams", "Howard Shore", "Danny Elfman"],
+                "reponse_correcte": "Hans Zimmer"
+            },
+            "question18": {
+                "enonce": "Quel est le manga le plus vendu au monde ?",
+                "reponses": ["One Piece", "Dragon Ball", "Naruto", "Detective Conan"],
+                "reponse_correcte": "One Piece"
+            },
+            "question19": {
+                "enonce": "Qui est le créateur de la série 'Les Simpson' ?",
+                "reponses": ["Matt Groening", "Seth MacFarlane", "Mike Judge", "Trey Parker"],
+                "reponse_correcte": "Matt Groening"
+            },
+            "question20": {
+                "enonce": "Quel film a remporté l'Oscar du meilleur film en 2024 ?",
+                "reponses": ["Oppenheimer", "Barbie", "Killers of the Flower Moon", "Poor Things"],
+                "reponse_correcte": "Oppenheimer"
             }
         }
     },
-
     {
         "question1": {
-            "enonce" : "quelle est la premiere question ?",
-            "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-            "reponse_correcte" : "reponse1"
+            "enonce": "Quelle est la constante mathématique de Champernowne ?",
+            "reponses": ["0,12345678910111213...", "1,41421356...", "2,71828...", "3,14159..."],
+            "reponse_correcte": "0,12345678910111213..."
         },
         "question2": {
-            "enonce" : "quelle est la premiere question ?",
-            "reponses" : ["reponse1", "reponse2", "reponse3", "reponse4"],
-            "reponse_correcte" : "reponse1"
+            "enonce": "Quel philosophe grec a développé le concept de l'atome ?",
+            "reponses": ["Démocrite", "Aristote", "Platon", "Socrate"],
+            "reponse_correcte": "Démocrite"
+        },
+        "question3": {
+            "enonce": "Quelle est la plus ancienne université encore en activité dans le monde ?",
+            "reponses": ["Université Al Quaraouiyine", "Université d'Oxford", "Université de Bologne", "Université de Paris"],
+            "reponse_correcte": "Université Al Quaraouiyine"
+        },
+        "question4": {
+            "enonce": "Quel est le théorème qui stipule qu'il n'existe pas de solution générale par radicaux pour les équations de degré supérieur ou égal à 5 ?",
+            "reponses": ["Théorème d'Abel-Ruffini", "Théorème de Fermat", "Théorème de Pythagore", "Théorème de Gauss"],
+            "reponse_correcte": "Théorème d'Abel-Ruffini"
+        },
+        "question5": {
+            "enonce": "Qui a découvert la radioactivité naturelle de l'uranium ?",
+            "reponses": ["Henri Becquerel", "Marie Curie", "Ernest Rutherford", "Wilhelm Röntgen"],
+            "reponse_correcte": "Henri Becquerel"
+        },
+        "question6": {
+            "enonce": "Quel est le seul nombre premier qui soit aussi un nombre de Mersenne et un nombre de Fermat ?",
+            "reponses": ["3", "5", "7", "11"],
+            "reponse_correcte": "3"
+        },
+        "question7": {
+            "enonce": "Quelle est la plus ancienne œuvre littéraire connue ?",
+            "reponses": ["L'Épopée de Gilgamesh", "L'Iliade", "Le Livre des Morts", "Le Mahabharata"],
+            "reponse_correcte": "L'Épopée de Gilgamesh"
+        },
+        "question8": {
+            "enonce": "Quel scientifique a formulé le principe d'incertitude en mécanique quantique ?",
+            "reponses": ["Werner Heisenberg", "Niels Bohr", "Erwin Schrödinger", "Max Planck"],
+            "reponse_correcte": "Werner Heisenberg"
+        },
+        "question9": {
+            "enonce": "Quelle est la seule planète du système solaire dont la période de rotation est plus longue que sa période de révolution ?",
+            "reponses": ["Vénus", "Mars", "Mercure", "Uranus"],
+            "reponse_correcte": "Vénus"
+        },
+        "question10": {
+            "enonce": "Qui a découvert la structure en double hélice de l'ADN ?",
+            "reponses": ["Watson et Crick", "Franklin et Wilkins", "Mendel", "Morgan"],
+            "reponse_correcte": "Watson et Crick"
+        },
+        "question11": {
+            "enonce": "Quel est le plus ancien théorème mathématique connu ?",
+            "reponses": ["Théorème de Thalès", "Théorème de Pythagore", "Théorème d'Euclide", "Théorème de Ptolémée"],
+            "reponse_correcte": "Théorème de Thalès"
+        },
+        "question12": {
+            "enonce": "Quelle est la plus ancienne civilisation connue ?",
+            "reponses": ["Sumérienne", "Égyptienne", "Indus", "Chinoise"],
+            "reponse_correcte": "Sumérienne"
+        },
+        "question13": {
+            "enonce": "Quel physicien a formulé les équations de Maxwell de l'électromagnétisme ?",
+            "reponses": ["James Clerk Maxwell", "Michael Faraday", "Heinrich Hertz", "Nikola Tesla"],
+            "reponse_correcte": "James Clerk Maxwell"
+        },
+        "question14": {
+            "enonce": "Quelle est la plus ancienne forme d'écriture connue ?",
+            "reponses": ["Cunéiforme", "Hiéroglyphes", "Oracle des os", "Linéaire A"],
+            "reponse_correcte": "Cunéiforme"
+        },
+        "question15": {
+            "enonce": "Qui a découvert la pénicilline ?",
+            "reponses": ["Alexander Fleming", "Louis Pasteur", "Robert Koch", "Joseph Lister"],
+            "reponse_correcte": "Alexander Fleming"
+        },
+        "question16": {
+            "enonce": "Quel est le plus ancien jeu de société encore joué aujourd'hui ?",
+            "reponses": ["Senet", "Go", "Échecs", "Backgammon"],
+            "reponse_correcte": "Senet"
+        },
+        "question17": {
+            "enonce": "Quelle est la particule élémentaire la plus massive connue ?",
+            "reponses": ["Quark top", "Boson de Higgs", "Quark bottom", "Lepton tau"],
+            "reponse_correcte": "Quark top"
+        },
+        "question18": {
+            "enonce": "Qui a formulé le théorème de Gödel ?",
+            "reponses": ["Kurt Gödel", "David Hilbert", "Bertrand Russell", "Alan Turing"],
+            "reponse_correcte": "Kurt Gödel"
+        },
+        "question19": {
+            "enonce": "Quel est le plus ancien document mathématique connu ?",
+            "reponses": ["Papyrus de Rhind", "Os d'Ishango", "Tablettes de Plimpton", "Papyrus de Moscou"],
+            "reponse_correcte": "Os d'Ishango"
+        },
+        "question20": {
+            "enonce": "Qui a découvert la fission nucléaire ?",
+            "reponses": ["Otto Hahn et Lise Meitner", "Marie Curie", "Ernest Rutherford", "Enrico Fermi"],
+            "reponse_correcte": "Otto Hahn et Lise Meitner"
+        },
+        "question21": {
+            "enonce": "Quelle est la plus ancienne carte géographique connue ?",
+            "reponses": ["Tablette de Ga-Sur", "Papyrus de Turin", "Pierre de Soleb", "Carte de Ptolémée"],
+            "reponse_correcte": "Tablette de Ga-Sur"
+        },
+        "question22": {
+            "enonce": "Qui a formulé le principe d'exclusion en mécanique quantique ?",
+            "reponses": ["Wolfgang Pauli", "Max Born", "Paul Dirac", "Louis de Broglie"],
+            "reponse_correcte": "Wolfgang Pauli"
+        },
+        "question23": {
+            "enonce": "Quel est le plus ancien instrument de musique connu ?",
+            "reponses": ["Flûte de Divje Babe", "Flûte de Hohle Fels", "Harpe de Ur", "Tambour de Jiahu"],
+            "reponse_correcte": "Flûte de Divje Babe"
+        },
+        "question24": {
+            "enonce": "Qui a découvert le premier antibiotique ?",
+            "reponses": ["Alexander Fleming", "Gerhard Domagk", "Selman Waksman", "Howard Florey"],
+            "reponse_correcte": "Alexander Fleming"
+        },
+        "question25": {
+            "enonce": "Quelle est la plus ancienne ville encore habitée ?",
+            "reponses": ["Damas", "Jéricho", "Byblos", "Alep"],
+            "reponse_correcte": "Damas"
+        },
+        "question26": {
+            "enonce": "Qui a formulé la théorie des ensembles ?",
+            "reponses": ["Georg Cantor", "Gottlob Frege", "Giuseppe Peano", "Richard Dedekind"],
+            "reponse_correcte": "Georg Cantor"
+        },
+        "question27": {
+            "enonce": "Quel est le plus ancien poème épique connu ?",
+            "reponses": ["L'Épopée de Gilgamesh", "L'Iliade", "Le Ramayana", "Le Mahâbhârata"],
+            "reponse_correcte": "L'Épopée de Gilgamesh"
+        },
+        "question28": {
+            "enonce": "Qui a découvert la structure de la benzène ?",
+            "reponses": ["Friedrich August Kekulé", "Michael Faraday", "Dmitri Mendeleïev", "Antoine Lavoisier"],
+            "reponse_correcte": "Friedrich August Kekulé"
+        },
+        "question29": {
+            "enonce": "Quelle est la plus ancienne constitution écrite encore en vigueur ?",
+            "reponses": ["Constitution de San Marino", "Constitution des États-Unis", "Constitution française", "Magna Carta"],
+            "reponse_correcte": "Constitution de San Marino"
+        },
+        "question30": {
+            "enonce": "Qui a formulé les lois de la thermodynamique ?",
+            "reponses": ["Rudolf Clausius", "James Joule", "Sadi Carnot", "Ludwig Boltzmann"],
+            "reponse_correcte": "Rudolf Clausius"
         }
     }
 ]
-                
-                
-                
 
 
-    
+
